@@ -58,7 +58,7 @@ static DecodedInstructionStruct parseLine(const std::string& line, uint32_t pc) 
 }
 
 // this function reads the JSON file and calls parseLine on each entry
-std::vector<DecodedInstructionStruct> parseProgram(const std::string& filename) {
+std::vector<DecodedInstructionStruct> parseInstructions(const std::string& filename) {
     // the C++ equivalent of FILE* f = fopen(filename, "r"). The is_open() check is like checking f == NULL
     std::ifstream file(filename);
     if (!file.is_open()) {

@@ -4,4 +4,4 @@
 #include "structures.h"
 
 // just function declaration that returns a vector of DecodedInstructionStruct
-std::vector<DecodedInstructionStruct> parseProgram(const std::string& filename); 
+std::vector<DecodedInstructionStruct> parseInstructions(const std::string& filename); 
