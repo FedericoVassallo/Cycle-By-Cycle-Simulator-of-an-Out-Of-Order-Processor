@@ -1,4 +1,4 @@
-void fetch_decode(ProcessorStateStruct& state, const std::vector<DecodedInstructionStruct>& program_memory) {
+void fetchDecode(ProcessorStateStruct& state, const std::vector<DecodedInstructionStruct>& program_memory) {
     // basically get the instruction from the program memory at the addres of the PC,
     // thenc check if we have backpreassure applied and if not we fetch the instruction and
     // we put it in the decoded instruction register, and we update the PC
@@ -29,11 +29,94 @@ void fetch_decode(ProcessorStateStruct& state, const std::vector<DecodedInstruct
     //  Index 20 is the last valid instruction, index 21 means "nothing left.
 }
 
+void renameDispatch(ProcessorStateStruct& state) { 
+
+    // Check if there are enough physical registers, enough entries in the Active List, and enough entries
+    // in the Integer Queue. If not, apply back pressure to the previous stage
+
+    int DIRSize = state.DecodedInstructionRegister.size();
+
+    if (DIRSize == 0) {
+        return; // No instructions to rename and dispatch
+    }    
+
+    if ((state.FreeList.size() < DIRSize) || (state.ActiveList.size() + DIRSize > 32) || (state.IntegerQueue.size() + DIRSize > 32)) {
+        state.BackpressureFlag = true; // apply back pressure and we don't dispatch any instruction
+        return;
+    }
+
+    // If there are enough physical resources, rename the instructions decoded from the previous stage and
+    // update the Register Map Table and Free List accordingly
+
+    for (int i = 0; i < DIRSize; i++) {
+        // Allocate a new physical register from the free list
+        uint8_t newPhysReg = state.FreeList.front();
+        state.FreeList.pop_front();
+
+        // for each instruction in the decoded instruction register
+        // we put it in the active list and in the integer queue
+        ActiveListStruct ActiveListEntry;
+        ActiveListEntry.Done = false;
+        ActiveListEntry.Exception = false;
+        ActiveListEntry.PC = state.DecodedInstructionRegister[i].PC;
+        // save the old mapping of the destination register in the active list entry,
+        // so that we can restore it in case of an exception
+        ActiveListEntry.OldDestination = state.RegisterMapTable[state.DecodedInstructionRegister[i].rd];
+        ActiveListEntry.LogicalDestination = state.DecodedInstructionRegister[i].rd;
+
+        state.ActiveList.push_back(ActiveListEntry);
+
+        // Update the register map table to point to the new physical register
+        state.RegisterMapTable[state.DecodedInstructionRegister[i].rd] = newPhysReg;
+        // Mark the new physical register as busy (it will be written by the ALU later)
+        state.BusyBitTable[newPhysReg] = true;
+
+        IntegerQueueStruct IntegerQueueEntry;
+        IntegerQueueEntry.DestRegister = newPhysReg;
+        IntegerQueueEntry.OpCode = state.DecodedInstructionRegister[i].OpCode;
+        IntegerQueueEntry.PC = state.DecodedInstructionRegister[i].PC;
+
+        // Operand A: always a register (rs1)
+        uint8_t physRS1 = state.RegisterMapTable[state.DecodedInstructionRegister[i].rs1];
+        IntegerQueueEntry.OpARegTag = physRS1;
+        // ready means NOT busy
+        IntegerQueueEntry.OpAIsReady = !state.BusyBitTable[physRS1];
+        if (IntegerQueueEntry.OpAIsReady) {
+            IntegerQueueEntry.OpAValue = state.PhysicalRegisterFile[physRS1];
+        } else {
+            IntegerQueueEntry.OpAValue = 0;
+        }
+
+        // Operand B: register (rs2) or immediate depending on instruction type
+        if (state.DecodedInstructionRegister[i].hasImm) {
+            // for addi, the second operand is an immediate value, always ready
+            IntegerQueueEntry.OpBIsReady = true;
+            IntegerQueueEntry.OpBRegTag = 0;
+            IntegerQueueEntry.OpBValue = state.DecodedInstructionRegister[i].imm;
+        } else {
+            uint8_t physRS2 = state.RegisterMapTable[state.DecodedInstructionRegister[i].rs2];
+            IntegerQueueEntry.OpBRegTag = physRS2;
+            // ready means NOT busy
+            IntegerQueueEntry.OpBIsReady = !state.BusyBitTable[physRS2];
+            if (IntegerQueueEntry.OpBIsReady) {
+                IntegerQueueEntry.OpBValue = state.PhysicalRegisterFile[physRS2];
+            } else {
+                IntegerQueueEntry.OpBValue = 0;
+            }
+        }
+
+        state.IntegerQueue.push_back(IntegerQueueEntry);
+    }
+
+    state.DecodedInstructionRegister.clear(); // clear the decoded instruction register after dispatching
+    state.BackpressureFlag = false; // clear back pressure flag if we were able to dispatch
+
+}
 
 void commit(ProcessorStateStruct& state) { ... }   
 void execute(ProcessorStateStruct& state) { ... }
 void issue(ProcessorStateStruct& state) { ... }
-void rename(ProcessorStateStruct& state) { ... }
+
 
 
 void propagate(ProcessorStateStruct& state,
@@ -41,6 +124,6 @@ void propagate(ProcessorStateStruct& state,
     commit(state);
     execute(state);
     issue(state);
-    rename(state);
-    fetch_decode(state, program);
+    renameDispatch(state);
+    fetchDecode(state, program);
 }
