@@ -51,6 +51,8 @@ struct ProcessorStateStruct{
     bool ExceptionFlag = false; // Exception flag
     uint8_t RegisterMapTable[32] = {0}; // mapping architectural registers to physical registers
     // it has to be inizialised such that RegisterMapTable[i] = i for i in [0, 31]
+
+    bool BackpressureFlag = false; // flag to indicate if backpressure is applied (i.e., if an exception has occurred and we need to stop fetching new instructions)
     
     bool BusyBitTable[64] = {false}; // Busy bit table for physical registers
     
@@ -64,6 +66,7 @@ struct ProcessorStateStruct{
         PC = 0;
         ExceptionPC = 0;
         ExceptionFlag = false;
+        BackpressureFlag = false;
         for (int i = 0; i < 32; ++i) {
             RegisterMapTable[i] = i; // inizializza il mapping degli architectural registers
         }
