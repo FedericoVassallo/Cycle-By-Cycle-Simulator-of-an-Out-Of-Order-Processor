@@ -104,18 +104,63 @@ void renameDispatch(ProcessorStateStruct& state) {
                 IntegerQueueEntry.OpBValue = 0;
             }
         }
-
         state.IntegerQueue.push_back(IntegerQueueEntry);
     }
-
     state.DecodedInstructionRegister.clear(); // clear the decoded instruction register after dispatching
     state.BackpressureFlag = false; // clear back pressure flag if we were able to dispatch
+}
+
+void issue(ProcessorStateStruct& state) { 
+
+    // the ALU can accept up to 4 instruction per cycle
+    int issueLeft = 4;
+
+    // if we have more than the issueLeft we issue the ones that are the oldest so with higher PC
+    // since the integer queue is in order of dispatching, the oldest are at the beginning of the queue
+
+    for (int i = 0; i < state.IntegerQueue.size() && issueLeft > 0; i++) {
+        if (state.IntegerQueue[i].OpAIsReady && state.IntegerQueue[i].OpBIsReady) {
+            // if the instruction is ready to be issued, we move it to the executing instructions list
+            ExecutingInstructionALU ExecutingInstruction;
+            ExecutingInstruction.rd = state.IntegerQueue[i].DestRegister;
+            ExecutingInstruction.OpCode = state.IntegerQueue[i].OpCode;
+            ExecutingInstruction.Result = 0; // the result will be computed in the execute stage
+            ExecutingInstruction.PC = state.IntegerQueue[i].PC;
+            ExecutingInstruction.OpAValue = state.IntegerQueue[i].OpAValue;
+            ExecutingInstruction.OpBValue = state.IntegerQueue[i].OpBValue;
+
+            state.ExecutingInstructions.push_back(ExecutingInstruction);
+            // remove the instruction from the integer queue
+            state.IntegerQueue.erase(state.IntegerQueue.begin() + i);
+            i--; // adjust index after erasing, since after erasing we will shift back the indexes
+            issueLeft--;
+        }
+    }
+
+    // still to be tought about the fact that it ask:
+    // "The Issue unit can issue both instructions with all operands noted as ready in the Integer Queue and ones 
+    // with operands not yet ready but provided by a forwarding path"
+    // But apparently it seems that by using the order of the calls that are in the propagate function 
+    // basically we will have to forwarding value in the execute function so that when we call the issue
+    // the forwarding path should be already updated? 
+
+    // ask TA about this fact that they do not operate actually in parallel in a simulator but seuqntially
+}
+
+void execute(ProcessorStateStruct& state) {
+
+
 
 }
 
-void commit(ProcessorStateStruct& state) { ... }   
-void execute(ProcessorStateStruct& state) { ... }
-void issue(ProcessorStateStruct& state) { ... }
+void commit(ProcessorStateStruct& state) {
+
+
+    
+
+}   
+
+
 
 
 

@@ -37,12 +37,14 @@ struct IntegerQueueStruct{
 
 struct ExecutingInstructionALU{
     uint8_t     rd;  // destination register 
+    Opcode      OpCode;
+    uint64_t    OpAValue = 0;
+    uint64_t    OpBValue = 0;
     bool        ExceptionCaused = false; // indicates whether the instruction has caused an exception
     uint64_t    Result = 0; // result of the ALU operation
     uint32_t    PC = 0; // Program Counter of the instruction
     uint8_t CyclesLeft = 2; // number of cycles the instruction has been executing in the ALU
 };
-
 
 struct ProcessorStateStruct{
     uint32_t PC = 0; // Program Counter
