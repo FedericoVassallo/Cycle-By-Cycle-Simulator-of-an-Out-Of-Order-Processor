@@ -156,13 +156,9 @@ void execute(ProcessorStateStruct& state) {
 void commit(ProcessorStateStruct& state) {
 
 
-    
+
 
 }   
-
-
-
-
 
 void propagate(ProcessorStateStruct& state,
                const std::vector<DecodedInstructionStruct>& program) {
