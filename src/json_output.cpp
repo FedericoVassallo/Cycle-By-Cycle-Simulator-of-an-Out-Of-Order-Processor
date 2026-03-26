@@ -1,6 +1,10 @@
 #include "json_output.h"
 #include <fstream>
 
+// takes a ProcessorStateStruct and serializes it into a JSON snapshot. 
+// Called once per cycle to record the state.
+// Also handles writing the final JSON array to the output file.
+
 // helper function to convert Opcode enum to string for the JSON output
 static const char* opcodeToString(Opcode op) {
     switch (op) {

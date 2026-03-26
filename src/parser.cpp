@@ -5,6 +5,9 @@
 #include <stdexcept>
 #include <algorithm>
 
+///////////////   this parser.cpp is to read the in JSON file and convert it into         /////////////
+/////////////// a vector of DecodedInstructionStruct that I will n use in the simulator.  /////////////
+
 // helper function to convert string to Opcode enum (use const to make sure not modified)
 static Opcode stringToOpcode(const std::string& s) { 
     if (s == "add")  return Opcode::ADD;
