@@ -4,8 +4,9 @@
 // helper function to convert Opcode enum to string for the JSON output
 static const char* opcodeToString(Opcode op) {
     switch (op) {
-        case Opcode::ADD:  return "add";
-        case Opcode::ADDI: return "addi";
+        case Opcode::ADD:
+        case Opcode::ADDI:  // addi is stored as "add" in the IQ
+            return "add";
         case Opcode::SUB:  return "sub";
         case Opcode::MULU: return "mulu";
         case Opcode::DIVU: return "divu";

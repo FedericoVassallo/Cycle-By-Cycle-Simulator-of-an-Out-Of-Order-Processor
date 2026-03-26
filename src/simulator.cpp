@@ -1,170 +1,307 @@
-void fetchDecode(ProcessorStateStruct& state, const std::vector<DecodedInstructionStruct>& program_memory) {
+#include "simulator.h"
+#include "structures.h"
+#include <vector>
+#include <algorithm>
+#include <cstdint>
+
+void fetchDecode(const ProcessorStateStruct& current, 
+                 ProcessorStateStruct& next,
+                 const std::vector<DecodedInstructionStruct>& program_memory) {
     // basically get the instruction from the program memory at the addres of the PC,
-    // thenc check if we have backpreassure applied and if not we fetch the instruction and
+    // then check if we have backpressure applied and if not we fetch the instruction and
     // we put it in the decoded instruction register, and we update the PC
 
-    if (state.ExceptionFlag) {
-        state.PC = 0x10000;
-        state.DecodedInstructionRegister.clear();
+    if (next.ExceptionFlag) {
+        // read from current: ExceptionFlag is register-like, set by Commit last cycle
+        next.PC = 0x10000;
+        next.DecodedInstructionRegister.clear();
         return;
     }
 
-    if (state.BackpressureFlag) {
-        return; // If the backpressure flag is set, we do not fetch new instructions
-    }
-
-    if (state.PC >= program_memory.size()) {
+    if (next.BackpressureFlag) {
+        // read from next: Rename may have set this earlier in the same propagate cycle
         return;
     }
 
-    uint32_t startPC = state.PC;
+    if (next.PC >= program_memory.size()) {
+        // read from next: PC might have been updated by other stages this cycle
+        return;
+    }
+
+    uint32_t startPC = next.PC;
     int count = std::min(4, (int)(program_memory.size() - startPC));
 
     for (int i = 0; i < count; i++) {
-        state.DecodedInstructionRegister.push_back(program_memory[startPC + i]);
+        next.DecodedInstructionRegister.push_back(program_memory[startPC + i]);
     }
-    state.PC = startPC + count;
+    next.PC = startPC + count;
 
     // So PC ends up one past the last instruction
-    //  Index 20 is the last valid instruction, index 21 means "nothing left.
+    // Index 20 is the last valid instruction, index 21 means "nothing left."
 }
 
-void renameDispatch(ProcessorStateStruct& state) { 
+static void renameDispatch(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
+    if (next.ExceptionFlag) return;
 
-    // Check if there are enough physical registers, enough entries in the Active List, and enough entries
-    // in the Integer Queue. If not, apply back pressure to the previous stage
-
-    int DIRSize = state.DecodedInstructionRegister.size();
-
+    int DIRSize = next.DecodedInstructionRegister.size();
     if (DIRSize == 0) {
-        return; // No instructions to rename and dispatch
-    }    
-
-    if ((state.FreeList.size() < DIRSize) || (state.ActiveList.size() + DIRSize > 32) || (state.IntegerQueue.size() + DIRSize > 32)) {
-        state.BackpressureFlag = true; // apply back pressure and we don't dispatch any instruction
         return;
     }
 
-    // If there are enough physical resources, rename the instructions decoded from the previous stage and
-    // update the Register Map Table and Free List accordingly
+    if ((next.FreeList.size() < (size_t)DIRSize) ||
+        (next.ActiveList.size() + DIRSize > 32) ||
+        (next.IntegerQueue.size() + DIRSize > 32)) {
+        next.BackpressureFlag = true;
+        return;
+    }
 
     for (int i = 0; i < DIRSize; i++) {
-        // Allocate a new physical register from the free list
-        uint8_t newPhysReg = state.FreeList.front();
-        state.FreeList.pop_front();
+        DecodedInstructionStruct instr = next.DecodedInstructionRegister[i];
 
-        // for each instruction in the decoded instruction register
-        // we put it in the active list and in the integer queue
+        // Allocate new physical register
+        uint8_t newPhysReg = next.FreeList.front();
+        next.FreeList.pop_front();
+
+        // Look up sources BEFORE updating the map for rd
+        uint8_t physRS1 = next.RegisterMapTable[instr.rs1];
+        uint8_t physRS2 = next.RegisterMapTable[instr.rs2]; // unused if hasImm, but safe
+
+        // Active List entry
         ActiveListStruct ActiveListEntry;
         ActiveListEntry.Done = false;
         ActiveListEntry.Exception = false;
-        ActiveListEntry.PC = state.DecodedInstructionRegister[i].PC;
-        // save the old mapping of the destination register in the active list entry,
-        // so that we can restore it in case of an exception
-        ActiveListEntry.OldDestination = state.RegisterMapTable[state.DecodedInstructionRegister[i].rd];
-        ActiveListEntry.LogicalDestination = state.DecodedInstructionRegister[i].rd;
+        ActiveListEntry.PC = instr.PC;
+        ActiveListEntry.OldDestination = next.RegisterMapTable[instr.rd];
+        ActiveListEntry.LogicalDestination = instr.rd;
+        next.ActiveList.push_back(ActiveListEntry);
 
-        state.ActiveList.push_back(ActiveListEntry);
+        // Update map and busy bit AFTER reading sources
+        next.RegisterMapTable[instr.rd] = newPhysReg;
+        next.BusyBitTable[newPhysReg] = true;
 
-        // Update the register map table to point to the new physical register
-        state.RegisterMapTable[state.DecodedInstructionRegister[i].rd] = newPhysReg;
-        // Mark the new physical register as busy (it will be written by the ALU later)
-        state.BusyBitTable[newPhysReg] = true;
-
+        // Integer Queue entry
         IntegerQueueStruct IntegerQueueEntry;
         IntegerQueueEntry.DestRegister = newPhysReg;
-        IntegerQueueEntry.OpCode = state.DecodedInstructionRegister[i].OpCode;
-        IntegerQueueEntry.PC = state.DecodedInstructionRegister[i].PC;
+        IntegerQueueEntry.OpCode = instr.OpCode;
+        IntegerQueueEntry.PC = instr.PC;
 
-        // Operand A: always a register (rs1)
-        uint8_t physRS1 = state.RegisterMapTable[state.DecodedInstructionRegister[i].rs1];
+        // Operand A
         IntegerQueueEntry.OpARegTag = physRS1;
-        // ready means NOT busy
-        IntegerQueueEntry.OpAIsReady = !state.BusyBitTable[physRS1];
+        IntegerQueueEntry.OpAIsReady = !next.BusyBitTable[physRS1];
         if (IntegerQueueEntry.OpAIsReady) {
-            IntegerQueueEntry.OpAValue = state.PhysicalRegisterFile[physRS1];
+            IntegerQueueEntry.OpARegTag = 0;  // tag unused when ready
+            IntegerQueueEntry.OpAValue = next.PhysicalRegisterFile[physRS1];
         } else {
+            IntegerQueueEntry.OpARegTag = physRS1;
             IntegerQueueEntry.OpAValue = 0;
         }
 
-        // Operand B: register (rs2) or immediate depending on instruction type
-        if (state.DecodedInstructionRegister[i].hasImm) {
-            // for addi, the second operand is an immediate value, always ready
+        // Operand B
+        if (instr.hasImm) {
             IntegerQueueEntry.OpBIsReady = true;
             IntegerQueueEntry.OpBRegTag = 0;
-            IntegerQueueEntry.OpBValue = state.DecodedInstructionRegister[i].imm;
+            IntegerQueueEntry.OpBValue = static_cast<uint64_t>(instr.imm);
         } else {
-            uint8_t physRS2 = state.RegisterMapTable[state.DecodedInstructionRegister[i].rs2];
-            IntegerQueueEntry.OpBRegTag = physRS2;
-            // ready means NOT busy
-            IntegerQueueEntry.OpBIsReady = !state.BusyBitTable[physRS2];
+            IntegerQueueEntry.OpBIsReady = !next.BusyBitTable[physRS2];
             if (IntegerQueueEntry.OpBIsReady) {
-                IntegerQueueEntry.OpBValue = state.PhysicalRegisterFile[physRS2];
+                IntegerQueueEntry.OpBRegTag = 0;  // tag unused when ready
+                IntegerQueueEntry.OpBValue = next.PhysicalRegisterFile[physRS2];
             } else {
+                IntegerQueueEntry.OpBRegTag = physRS2;
                 IntegerQueueEntry.OpBValue = 0;
             }
         }
-        state.IntegerQueue.push_back(IntegerQueueEntry);
+
+        next.IntegerQueue.push_back(IntegerQueueEntry);
     }
-    state.DecodedInstructionRegister.clear(); // clear the decoded instruction register after dispatching
-    state.BackpressureFlag = false; // clear back pressure flag if we were able to dispatch
+
+    next.DecodedInstructionRegister.clear();
+    next.BackpressureFlag = false;
 }
 
-void issue(ProcessorStateStruct& state) { 
+void issue(const ProcessorStateStruct& current, ProcessorStateStruct& next) { 
 
     // the ALU can accept up to 4 instruction per cycle
     int issueLeft = 4;
 
-    // if we have more than the issueLeft we issue the ones that are the oldest so with higher PC
+    // if we have more than the issueLeft we issue the ones that are the oldest so with lower PC
     // since the integer queue is in order of dispatching, the oldest are at the beginning of the queue
 
-    for (int i = 0; i < state.IntegerQueue.size() && issueLeft > 0; i++) {
-        if (state.IntegerQueue[i].OpAIsReady && state.IntegerQueue[i].OpBIsReady) {
+    // read from next: Execute already updated ready bits via forwarding earlier this cycle
+    for (int i = 0; i < (int)next.IntegerQueue.size() && issueLeft > 0; i++) {
+        if (next.IntegerQueue[i].OpAIsReady && next.IntegerQueue[i].OpBIsReady) {
             // if the instruction is ready to be issued, we move it to the executing instructions list
             ExecutingInstructionALU ExecutingInstruction;
-            ExecutingInstruction.rd = state.IntegerQueue[i].DestRegister;
-            ExecutingInstruction.OpCode = state.IntegerQueue[i].OpCode;
+            ExecutingInstruction.rd = next.IntegerQueue[i].DestRegister;
+            ExecutingInstruction.OpCode = next.IntegerQueue[i].OpCode;
             ExecutingInstruction.Result = 0; // the result will be computed in the execute stage
-            ExecutingInstruction.PC = state.IntegerQueue[i].PC;
-            ExecutingInstruction.OpAValue = state.IntegerQueue[i].OpAValue;
-            ExecutingInstruction.OpBValue = state.IntegerQueue[i].OpBValue;
+            ExecutingInstruction.PC = next.IntegerQueue[i].PC;
+            ExecutingInstruction.OpAValue = next.IntegerQueue[i].OpAValue;
+            ExecutingInstruction.OpBValue = next.IntegerQueue[i].OpBValue;
 
-            state.ExecutingInstructions.push_back(ExecutingInstruction);
+            next.ExecutingInstructions.push_back(ExecutingInstruction);
             // remove the instruction from the integer queue
-            state.IntegerQueue.erase(state.IntegerQueue.begin() + i);
+            next.IntegerQueue.erase(next.IntegerQueue.begin() + i);
             i--; // adjust index after erasing, since after erasing we will shift back the indexes
             issueLeft--;
         }
     }
-
-    // still to be tought about the fact that it ask:
-    // "The Issue unit can issue both instructions with all operands noted as ready in the Integer Queue and ones 
-    // with operands not yet ready but provided by a forwarding path"
-    // But apparently it seems that by using the order of the calls that are in the propagate function 
-    // basically we will have to forwarding value in the execute function so that when we call the issue
-    // the forwarding path should be already updated? 
-
-    // ask TA about this fact that they do not operate actually in parallel in a simulator but seuqntially
 }
 
-void execute(ProcessorStateStruct& state) {
+void execute(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
+    // Process each instruction currently in the ALUs
+    for (int i = 0; i < (int)next.ExecutingInstructions.size(); i++) {
+        next.ExecutingInstructions[i].CyclesLeft--;
 
+        if (next.ExecutingInstructions[i].CyclesLeft == 0) {
+            // instruction is finishing this cycle
 
+            // Compute the result based on the opcode
+            switch (next.ExecutingInstructions[i].OpCode) {
+                case Opcode::ADD:
+                case Opcode::ADDI:
+                    next.ExecutingInstructions[i].Result = 
+                        next.ExecutingInstructions[i].OpAValue + next.ExecutingInstructions[i].OpBValue;
+                    break;
+                case Opcode::SUB:
+                    next.ExecutingInstructions[i].Result = 
+                        next.ExecutingInstructions[i].OpAValue - next.ExecutingInstructions[i].OpBValue;
+                    break;
+                case Opcode::MULU:
+                    next.ExecutingInstructions[i].Result = 
+                        next.ExecutingInstructions[i].OpAValue * next.ExecutingInstructions[i].OpBValue;
+                    break;
+                case Opcode::DIVU:
+                    if (next.ExecutingInstructions[i].OpBValue == 0) {
+                        next.ExecutingInstructions[i].ExceptionCaused = true;
+                        next.ExecutingInstructions[i].Result = 0; // won't be committed
+                    } else {
+                        next.ExecutingInstructions[i].Result = 
+                            next.ExecutingInstructions[i].OpAValue / next.ExecutingInstructions[i].OpBValue;
+                    }
+                    break;
+                case Opcode::REMU:
+                    if (next.ExecutingInstructions[i].OpBValue == 0) {
+                        next.ExecutingInstructions[i].ExceptionCaused = true;
+                        next.ExecutingInstructions[i].Result = 0; // won't be committed
+                    } else {
+                        next.ExecutingInstructions[i].Result = 
+                            next.ExecutingInstructions[i].OpAValue % next.ExecutingInstructions[i].OpBValue;
+                    }
+                    break;
+            }
 
+            // Always mark Done in ActiveList
+            for (int j = 0; j < (int)next.ActiveList.size(); j++) {
+                if (next.ActiveList[j].PC == next.ExecutingInstructions[i].PC &&
+                    !next.ActiveList[j].Done) {
+                    next.ActiveList[j].Done = true;
+                    next.ActiveList[j].Exception = next.ExecutingInstructions[i].ExceptionCaused;
+                    break;
+                }
+            }
+
+            // Only write result and clear busy bit if no exception
+            if (!next.ExecutingInstructions[i].ExceptionCaused) {
+                next.PhysicalRegisterFile[next.ExecutingInstructions[i].rd] =
+                    next.ExecutingInstructions[i].Result;
+                next.BusyBitTable[next.ExecutingInstructions[i].rd] = false;
+
+                // Only forward to IQ if no exception
+                for (int j = 0; j < (int)next.IntegerQueue.size(); j++) {
+                    if (!next.IntegerQueue[j].OpAIsReady &&
+                        next.IntegerQueue[j].OpARegTag == next.ExecutingInstructions[i].rd) {
+                        next.IntegerQueue[j].OpAIsReady = true;
+                        next.IntegerQueue[j].OpARegTag = 0;  // clear tag when ready
+                        next.IntegerQueue[j].OpAValue = next.ExecutingInstructions[i].Result;
+                    }
+                    if (!next.IntegerQueue[j].OpBIsReady &&
+                        next.IntegerQueue[j].OpBRegTag == next.ExecutingInstructions[i].rd) {
+                        next.IntegerQueue[j].OpBIsReady = true;
+                        next.IntegerQueue[j].OpBRegTag = 0;  // clear tag when ready
+                        next.IntegerQueue[j].OpBValue = next.ExecutingInstructions[i].Result;
+                    }
+                }
+            }
+        }
+    }
+
+    // Remove completed instructions (CyclesLeft == 0) from the executing list
+    // We iterate backwards to avoid index issues when erasing
+    for (int i = (int)next.ExecutingInstructions.size() - 1; i >= 0; i--) {
+        if (next.ExecutingInstructions[i].CyclesLeft == 0) {
+            next.ExecutingInstructions.erase(next.ExecutingInstructions.begin() + i);
+        }
+    }
 }
 
-void commit(ProcessorStateStruct& state) {
+void commit(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
 
+    if (current.ExceptionFlag) {
+    // If ActiveList is already empty, just clear the flag this cycle
+    if (next.ActiveList.empty()) {
+        next.ExceptionFlag = false;
+        return;
+    }
+    // Otherwise rollback up to 4 instructions
+    int rollbackCount = std::min(4, (int)next.ActiveList.size());
+    for (int i = 0; i < rollbackCount; i++) {
+        ActiveListStruct entry = next.ActiveList.back();
+        next.ActiveList.pop_back();
+        uint8_t newPhysReg = next.RegisterMapTable[entry.LogicalDestination];
+        next.RegisterMapTable[entry.LogicalDestination] = entry.OldDestination;
+        next.FreeList.push_back(newPhysReg);
+        next.BusyBitTable[newPhysReg] = false;
+    }
+    // Do NOT clear ExceptionFlag here — wait until next cycle when AL is empty
+    return;
+}
 
+    // ===== Normal Commit Mode =====
+    // Retire up to 4 instructions from the FRONT of the Active List (oldest first)
 
+    int commitCount = 0;
 
-}   
+    while (commitCount < 4 && !next.ActiveList.empty()) {
+        ActiveListStruct front = next.ActiveList.front();
+
+        if (!front.Done) {
+            break; // instruction not completed yet, stop committing
+        }
+
+        if (front.Exception) {
+            next.ExceptionFlag = true;
+            next.ExceptionPC = front.PC;
+            next.IntegerQueue.clear();
+            next.ExecutingInstructions.clear();
+            // Do NOT remove the excepting instruction or free its register here
+            // Rollback will handle it next cycle
+            break;
+        }
+
+        // Normal retirement
+        // The old physical register is no longer needed — return to free list
+        // For normal commit, earlier instructions (in program order) go EARLIER in the free list
+        next.FreeList.push_back(front.OldDestination);
+        next.ActiveList.pop_front();
+        commitCount++;
+    }
+}
 
 void propagate(ProcessorStateStruct& state,
                const std::vector<DecodedInstructionStruct>& program) {
-    commit(state);
-    execute(state);
-    issue(state);
-    renameDispatch(state);
-    fetchDecode(state, program);
+    // Make a copy — this becomes the "next state"
+    ProcessorStateStruct next = state;
+    next.BackpressureFlag = false;
+    // All stages run in reverse pipeline order
+    // Each reads from 'state' (current) for register-like values
+    // and from 'next' for queues (asynchronous-read)
+    commit(state, next);
+    execute(state, next);
+    issue(state, next);
+    renameDispatch(state, next);
+    fetchDecode(state, next, program);
+
+    // Latch — replace current with next
+    state = next;
 }

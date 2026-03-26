@@ -2,6 +2,7 @@
 #include "structures.h"
 #include "parser.h"
 #include "json_output.h"
+#include "simulator.h"
 
 int main(int argc, char* argv[]) {
     if (argc < 3) {
@@ -24,13 +25,16 @@ int main(int argc, char* argv[]) {
     dumpStateIntoLog(state, log);
 
     // 2. The loop for cycle-by-cycle iterations
-    while (state.PC < program.size() || !state.ActiveList.empty()) {
+    while (state.PC < program.size() ||
+       !state.DecodedInstructionRegister.empty() ||
+       !state.ActiveList.empty() ||
+       state.ExceptionFlag) { 
         // propagate — compute next state
         // latch — apply next state
         // dump the state
+        propagate(state, program);
         dumpStateIntoLog(state, log);
     }
-
     // 3. Save the output JSON log
     saveLog(log, argv[2]);
 
