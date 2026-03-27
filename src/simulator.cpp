@@ -14,9 +14,8 @@ void fetchDecode(const ProcessorStateStruct& current,
     // if we see that an exception is raised we need to clear the decoded instruction register 
     // and set the PC to the exception handler address (0x10000) and we return
     if (next.ExceptionFlag) {
-        // read from current: ExceptionFlag is register-like, set by Commit last cycle
         next.PC = 0x10000;
-        next.DecodedInstructionRegister.clear();
+        next.DecodedInstructionRegister.clear(); 
         return;
     }
 
@@ -299,6 +298,7 @@ void commit(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
 
         if (front.Exception) { // if we get to an instruction that caused an exception
             next.ExceptionFlag = true; // we set the ExceptionFlag to true
+            // setting the flag is the indirect way to notify the F&D stage of the exception
             next.ExceptionPC = front.PC; // save the pc of the ones caused exception
             // reset the integer queue and the execution stage
             next.IntegerQueue.clear();
@@ -315,18 +315,17 @@ void commit(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
 }
 
 void propagate(ProcessorStateStruct& state, const std::vector<DecodedInstructionStruct>& program) {
-    // Make a copy — this becomes the "next state"
-    ProcessorStateStruct next = state;
-    next.BackpressureFlag = false;
+
+    ProcessorStateStruct next = state; // make a copy of the current state to modify for the next cycle
+    next.BackpressureFlag = false; // maybe can be removed (to check)
+
     // All stages run in reverse pipeline order
-    // Each reads from 'state' (current) for register-like values
-    // and from 'next' for queues (asynchronous-read)
     commit(state, next);
     execute(state, next);
     issue(state, next);
     renameDispatch(state, next);
     fetchDecode(state, next, program);
 
-    // Latch — replace current with next
+    // Latch, replace current with next
     state = next;
 }
