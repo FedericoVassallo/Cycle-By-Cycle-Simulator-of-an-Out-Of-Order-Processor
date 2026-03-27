@@ -262,59 +262,59 @@ void execute(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
 
 void commit(const ProcessorStateStruct& current, ProcessorStateStruct& next) {
 
+    // we check if we are in an exception state
     if (current.ExceptionFlag) {
-    // If ActiveList is already empty, just clear the flag this cycle
-    if (next.ActiveList.empty()) {
-        next.ExceptionFlag = false;
+    // if ActiveList is already empty, just clear the flag this cycle (means rolled back already done) 
+    if (next.ActiveList.empty()) { // could also check current
+        next.ExceptionFlag = false; // exit the exception mode 
         return;
     }
-    // Otherwise rollback up to 4 instructions
+    // if is not empty rollback up to 4 instructions per cycle (less than 4 if we have less in ActiveList)
     int rollbackCount = std::min(4, (int)next.ActiveList.size());
     for (int i = 0; i < rollbackCount; i++) {
-        ActiveListStruct entry = next.ActiveList.back();
+        // take the youngest instruction in the ActiveList (the one at the end) and roll it back
+        // start from the end because the renaming has to be undone in reverse
+        ActiveListStruct entry = next.ActiveList.back(); // save the first that will be reversed
         next.ActiveList.pop_back();
-        uint8_t newPhysReg = next.RegisterMapTable[entry.LogicalDestination];
-        next.RegisterMapTable[entry.LogicalDestination] = entry.OldDestination;
-        next.FreeList.push_back(newPhysReg);
-        next.BusyBitTable[newPhysReg] = false;
+        uint8_t newPhysReg = next.RegisterMapTable[entry.LogicalDestination]; // takes the ph register mapped to this instr destination
+        next.RegisterMapTable[entry.LogicalDestination] = entry.OldDestination; // restore the old mapping in the register map table
+        next.FreeList.push_back(newPhysReg); // we free the ph register that was allocated for this instr 
+        next.BusyBitTable[newPhysReg] = false; // we also clear it's busy bit
     }
-    // Do NOT clear ExceptionFlag here — wait until next cycle when AL is empty
+    // the clearing of the exception flag in next cycle
     return;
-}
+    }
 
-    // ===== Normal Commit Mode =====
-    // Retire up to 4 instructions from the FRONT of the Active List (oldest first)
+    // here instead the case of the normal commit (without exception)
+    // Retire up to 4 instructions from the front of the Active List (oldest first to keep the architectural order)
 
     int commitCount = 0;
 
-    while (commitCount < 4 && !next.ActiveList.empty()) {
-        ActiveListStruct front = next.ActiveList.front();
+    while (commitCount < 4 && !next.ActiveList.empty()) { // as long as list not empty and we have not committed 4 instructions yet
+        ActiveListStruct front = next.ActiveList.front(); // each time we take the front instr
 
-        if (!front.Done) {
-            break; // instruction not completed yet, stop committing
+        if (!front.Done) { // we get to an instruction that has not finished yet
+            break; // instruction not completed yet so even the younger ones can't be committed
         }
 
-        if (front.Exception) {
-            next.ExceptionFlag = true;
-            next.ExceptionPC = front.PC;
+        if (front.Exception) { // if we get to an instruction that caused an exception
+            next.ExceptionFlag = true; // we set the ExceptionFlag to true
+            next.ExceptionPC = front.PC; // save the pc of the ones caused exception
+            // reset the integer queue and the execution stage
             next.IntegerQueue.clear();
-            next.ExecutingInstructions.clear();
-            // Do NOT remove the excepting instruction or free its register here
-            // Rollback will handle it next cycle
+            next.ExecutingInstructions.clear(); 
+
             break;
         }
 
-        // Normal retirement
-        // The old physical register is no longer needed — return to free list
-        // For normal commit, earlier instructions (in program order) go EARLIER in the free list
-        next.FreeList.push_back(front.OldDestination);
-        next.ActiveList.pop_front();
-        commitCount++;
+        // case normal so no exception
+        next.FreeList.push_back(front.OldDestination); // the old physical register is no longer needed so return to free list
+        next.ActiveList.pop_front(); // remove the instruction from the active list
+        commitCount++; // increase the count of committed instructions
     }
 }
 
-void propagate(ProcessorStateStruct& state,
-               const std::vector<DecodedInstructionStruct>& program) {
+void propagate(ProcessorStateStruct& state, const std::vector<DecodedInstructionStruct>& program) {
     // Make a copy — this becomes the "next state"
     ProcessorStateStruct next = state;
     next.BackpressureFlag = false;
