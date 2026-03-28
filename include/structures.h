@@ -10,7 +10,7 @@ struct DecodedInstructionStruct{
     uint32_t PC;
     uint8_t  rd;    // destination register 
     uint8_t  rs1;   // source A register 
-    uint8_t  rs2;   // source B register (0-31), unused if hasImm
+    uint8_t  rs2;   // source B register, unused if hasImm
     int64_t  imm;   // immediate, used only if hasImm
     bool     hasImm;
 };
@@ -24,13 +24,13 @@ struct ActiveListStruct{
 };
 
 struct IntegerQueueStruct{
-    uint8_t     DestRegister = 0;    // registro FISICO destinazione
+    uint8_t     DestRegister = 0;    // physical destination register
     bool        OpAIsReady   = false;
-    uint8_t     OpARegTag    = 0;    // registro fisico di srcA (per ascoltare forwarding)
-    uint64_t    OpAValue     = 0;
+    uint8_t     OpARegTag    = 0;    // physical register of srcA 
+    uint64_t    OpAValue     = 0; 
     bool        OpBIsReady   = false;
-    uint8_t     OpBRegTag    = 0;
-    uint64_t    OpBValue     = 0;
+    uint8_t     OpBRegTag    = 0;    // physical register of srcB or immediate value if OpBIsReady is false
+    uint64_t    OpBValue     = 0; 
     Opcode      OpCode;              // "add", "sub", "mulu", "divu", "remu", "addi"
     uint32_t    PC           = 0;
 };
@@ -54,7 +54,7 @@ struct ProcessorStateStruct{
     uint8_t RegisterMapTable[32] = {0}; // mapping architectural registers to physical registers
     // it has to be inizialised such that RegisterMapTable[i] = i for i in [0, 31]
 
-    bool BackpressureFlag = false; // flag to indicate if backpressure is applied (i.e., if an exception has occurred and we need to stop fetching new instructions)
+    bool BackpressureFlag = false; // flag to indicate if backpressure is applied 
     
     bool BusyBitTable[64] = {false}; // Busy bit table for physical registers
     
@@ -70,15 +70,15 @@ struct ProcessorStateStruct{
         ExceptionFlag = false;
         BackpressureFlag = false;
         for (int i = 0; i < 32; ++i) {
-            RegisterMapTable[i] = i; // inizializza il mapping degli architectural registers
+            RegisterMapTable[i] = i; // inizializza the mapping of architectural registers
         }
         for (int i = 0; i < 64; ++i) {
-            PhysicalRegisterFile[i] = 0; // inizializza il physical register file
-            BusyBitTable[i] = false; // inizializza la busy bit table
+            PhysicalRegisterFile[i] = 0; // initialize the physical register file
+            BusyBitTable[i] = false; // initialize the busy bit table
         }
         FreeList.clear();
         for (int i = 32; i < 64; ++i) {
-            FreeList.push_back(i); // inizializza la free list con i registri fisici disponibili
+            FreeList.push_back(i); // initialize the free list with the available physical registers
         }
         ActiveList.clear();
         IntegerQueue.clear();
