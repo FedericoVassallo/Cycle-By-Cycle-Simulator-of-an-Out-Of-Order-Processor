@@ -90,6 +90,7 @@ void dumpStateIntoLog(const ProcessorStateStruct& state, nlohmann::json& log) {
     log.push_back(snapshot);
 }
 
+// takes the entire JSON log with array of all cycle snapshots and writes it to the file
 void saveLog(const nlohmann::json& log, const std::string& filename) {
     std::ofstream file(filename);
     if (!file.is_open()) {
