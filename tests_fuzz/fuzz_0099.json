@@ -1,0 +1,10 @@
+[
+  "remu x7, x1, x30",
+  "remu x0, x7, x5",
+  "remu x29, x17, x17",
+  "divu x30, x4, x9",
+  "remu x4, x25, x24",
+  "divu x2, x31, x27",
+  "addi x26, x11, -872556306732747147",
+  "add x1, x17, x12"
+]

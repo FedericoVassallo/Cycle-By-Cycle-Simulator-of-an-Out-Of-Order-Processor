@@ -1,0 +1,9 @@
+[
+  "remu x10, x0, x16",
+  "addi x10, x23, -24626",
+  "addi x10, x7, -60",
+  "divu x10, x19, x7",
+  "addi x10, x18, -44",
+  "sub x10, x8, x30",
+  "sub x10, x29, x23"
+]

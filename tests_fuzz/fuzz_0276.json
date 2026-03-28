@@ -1,0 +1,16 @@
+[
+  "sub x0, x23, x20",
+  "add x0, x27, x21",
+  "sub x0, x1, x21",
+  "addi x0, x14, 12",
+  "remu x0, x7, x8",
+  "add x0, x28, x10",
+  "addi x0, x2, 29712",
+  "remu x0, x1, x14",
+  "mulu x0, x20, x0",
+  "remu x0, x6, x26",
+  "remu x0, x16, x17",
+  "mulu x0, x27, x20",
+  "addi x0, x28, -3146228424765317151",
+  "addi x0, x28, -1"
+]

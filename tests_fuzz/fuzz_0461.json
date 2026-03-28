@@ -1,0 +1,8 @@
+[
+  "sub x3, x0, x4",
+  "mulu x23, x23, x1",
+  "sub x15, x20, x28",
+  "divu x18, x4, x0",
+  "sub x5, x9, x30",
+  "mulu x1, x4, x23"
+]

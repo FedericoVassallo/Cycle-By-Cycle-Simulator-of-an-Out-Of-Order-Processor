@@ -1,0 +1,23 @@
+[
+  "mulu x0, x3, x15",
+  "divu x26, x22, x19",
+  "addi x1, x6, 3369326477082501573",
+  "mulu x0, x9, x22",
+  "divu x31, x2, x2",
+  "remu x20, x3, x9",
+  "addi x29, x0, -1",
+  "divu x4, x7, x12",
+  "remu x26, x17, x12",
+  "divu x8, x26, x26",
+  "add x26, x12, x24",
+  "divu x30, x4, x29",
+  "addi x29, x20, -2",
+  "addi x19, x11, -19757",
+  "mulu x17, x29, x5",
+  "addi x16, x6, 1025",
+  "mulu x10, x28, x30",
+  "add x23, x2, x30",
+  "mulu x21, x2, x20",
+  "divu x10, x16, x18",
+  "remu x5, x24, x28"
+]

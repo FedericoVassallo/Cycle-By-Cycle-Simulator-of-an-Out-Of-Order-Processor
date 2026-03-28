@@ -1,0 +1,7 @@
+[
+  "add x17, x1, x17",
+  "sub x24, x14, x21",
+  "add x2, x8, x28",
+  "addi x5, x28, 0",
+  "divu x13, x6, x0"
+]

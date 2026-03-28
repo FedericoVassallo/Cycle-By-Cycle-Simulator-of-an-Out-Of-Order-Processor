@@ -1,0 +1,23 @@
+[
+  "sub x18, x18, x30",
+  "addi x27, x22, -83",
+  "sub x26, x25, x8",
+  "addi x15, x3, 3972210664788148359",
+  "add x26, x21, x16",
+  "divu x7, x20, x0",
+  "add x6, x7, x24",
+  "sub x8, x28, x7",
+  "addi x15, x7, -46",
+  "mulu x4, x26, x10",
+  "addi x19, x7, -10",
+  "add x8, x4, x13",
+  "sub x0, x31, x7",
+  "add x31, x3, x7",
+  "addi x4, x7, -24",
+  "addi x21, x7, -4",
+  "add x22, x7, x27",
+  "addi x5, x7, -93",
+  "add x11, x7, x21",
+  "add x24, x27, x7",
+  "addi x17, x7, 82"
+]

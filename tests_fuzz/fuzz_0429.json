@@ -1,0 +1,10 @@
+[
+  "sub x25, x6, x0",
+  "add x18, x12, x20",
+  "add x3, x21, x6",
+  "addi x27, x23, 0",
+  "remu x7, x25, x0",
+  "addi x3, x7, 42",
+  "addi x5, x7, 69",
+  "addi x14, x7, 62"
+]

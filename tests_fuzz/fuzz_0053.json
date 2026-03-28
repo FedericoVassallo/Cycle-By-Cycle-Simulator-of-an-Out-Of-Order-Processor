@@ -1,0 +1,11 @@
+[
+  "addi x9, x16, -1",
+  "divu x7, x5, x24",
+  "addi x5, x12, 52964945822184184",
+  "add x24, x19, x26",
+  "divu x6, x22, x9",
+  "add x13, x25, x19",
+  "divu x10, x31, x0",
+  "divu x4, x26, x26",
+  "add x27, x10, x11"
+]

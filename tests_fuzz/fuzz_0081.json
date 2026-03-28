@@ -1,0 +1,12 @@
+[
+  "addi x12, x0, 39",
+  "addi x16, x12, 2",
+  "addi x2, x16, -3",
+  "sub x14, x2, x6",
+  "addi x25, x14, -2",
+  "sub x19, x25, x25",
+  "add x17, x19, x10",
+  "add x29, x17, x19",
+  "sub x31, x29, x12",
+  "sub x5, x31, x8"
+]

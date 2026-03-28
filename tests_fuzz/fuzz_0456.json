@@ -1,0 +1,6 @@
+[
+  "sub x19, x5, x13",
+  "mulu x3, x23, x20",
+  "remu x23, x18, x0",
+  "addi x1, x23, -1"
+]

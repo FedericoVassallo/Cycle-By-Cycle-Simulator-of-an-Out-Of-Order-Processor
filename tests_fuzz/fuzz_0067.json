@@ -1,0 +1,15 @@
+[
+  "mulu x0, x1, x30",
+  "addi x0, x28, -70",
+  "remu x0, x5, x22",
+  "divu x0, x13, x9",
+  "divu x0, x27, x21",
+  "add x0, x28, x17",
+  "mulu x0, x6, x3",
+  "addi x0, x24, -332480386",
+  "mulu x0, x12, x25",
+  "sub x0, x17, x31",
+  "remu x0, x27, x6",
+  "addi x0, x3, -18209",
+  "sub x0, x7, x3"
+]

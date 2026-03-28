@@ -1,0 +1,7 @@
+[
+  "mulu x9, x30, x23",
+  "mulu x9, x3, x12",
+  "divu x27, x18, x0",
+  "add x23, x27, x0",
+  "add x13, x23, x19"
+]

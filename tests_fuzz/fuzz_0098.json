@@ -1,0 +1,23 @@
+[
+  "addi x10, x0, 1",
+  "add x28, x10, x11",
+  "addi x7, x28, 5",
+  "sub x24, x7, x24",
+  "addi x15, x24, 2",
+  "sub x30, x15, x10",
+  "addi x16, x30, 7",
+  "sub x26, x16, x18",
+  "sub x3, x26, x15",
+  "sub x29, x3, x6",
+  "add x20, x29, x1",
+  "add x31, x20, x0",
+  "addi x30, x31, -10",
+  "addi x15, x30, 2",
+  "sub x4, x15, x10",
+  "add x7, x4, x23",
+  "sub x14, x7, x12",
+  "sub x3, x14, x23",
+  "addi x14, x3, 10",
+  "add x25, x14, x19",
+  "add x10, x25, x7"
+]
