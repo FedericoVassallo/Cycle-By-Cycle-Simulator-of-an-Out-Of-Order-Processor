@@ -1,1 +1,6 @@
 ./build.sh && ./runall.sh && ./testall.sh
+
+
+for the fuzzer:
+
+python3 fuzzer.py --generate 500 --seed 42 --run --sim ./simulator --ref ./ref_sim.py
