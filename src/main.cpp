@@ -5,37 +5,37 @@
 #include "simulator.h"
 
 int main(int argc, char* argv[]) {
-    if (argc < 3) {
+    if (argc < 3) { // have to provide input and output file names as arguments
         std::cerr << "Usage: " << argv[0] << " <input.json> <output.json>" << std::endl;
         return 1;
     }
 
-    // 0. Parse JSON to get the program
+    // use parser to read the input JSON file and convert it in vector of DecodedInstructionStruct that will be program memory
     std::vector<DecodedInstructionStruct> program = parseInstructions(argv[1]);
 
     // Initialize processor
     ProcessorStateStruct state;
     state.reset();
 
-    // create a JSON array to hold the log of processor states
+    // create a empty JSON array to hold all the cycle-by-cycle snapshots 
     nlohmann::json log = nlohmann::json::array();
 
-    // 1. Dump the state of the reset system
-    // So `log` is accumulating all the snapshots. Each time we call `dumpStateIntoLog`, it adds one more entry
-    dumpStateIntoLog(state, log);
+    // dump the state of the reset system, log is accumulating all the snapshots, each dumpStateIntoLog adds one more entry
+    dumpStateIntoLog(state, log); // this is cycle 0
 
-    // 2. The loop for cycle-by-cycle iterations
+    // loop for cycle-by-cycle iterations 
+    // we only end if we finish executing all the instructions and we are not in an exception state
     while (state.PC < program.size() ||
        !state.DecodedInstructionRegister.empty() ||
        !state.ActiveList.empty() ||
-       state.ExceptionFlag) { 
-        // propagate — compute next state
-        // latch — apply next state
-        // dump the state
+       state.ExceptionFlag) {  
+        
+        // call the propagate that is defined in the processor.cpp and run all pipeline stages once
         propagate(state, program);
+        // captures the processor state after this cycle and appends it to the log
         dumpStateIntoLog(state, log);
     }
-    // 3. Save the output JSON log
+    // once the loop ends it writes the entire accumulated log to the output JSON file
     saveLog(log, argv[2]);
 
     return 0;

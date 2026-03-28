@@ -1,0 +1,1 @@
+./build.sh && ./runall.sh && ./testall.sh
