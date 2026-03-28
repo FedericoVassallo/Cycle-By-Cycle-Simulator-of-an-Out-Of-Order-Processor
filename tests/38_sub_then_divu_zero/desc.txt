@@ -1,0 +1,1 @@
+sub same-same then divu by zero

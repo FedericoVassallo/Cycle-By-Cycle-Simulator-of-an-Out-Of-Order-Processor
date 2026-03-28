@@ -1,0 +1,1 @@
+12 instructions — three fetch groups

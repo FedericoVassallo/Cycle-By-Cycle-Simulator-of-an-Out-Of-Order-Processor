@@ -1796,15 +1796,15 @@
                 "PC": 5
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 4,
                 "OldDestination": 4,
                 "PC": 6
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 2,
                 "OldDestination": 2,
                 "PC": 7
@@ -2101,15 +2101,15 @@
                 "PC": 5
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 4,
                 "OldDestination": 4,
                 "PC": 6
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 2,
                 "OldDestination": 2,
                 "PC": 7
@@ -2382,15 +2382,15 @@
                 "PC": 5
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 4,
                 "OldDestination": 4,
                 "PC": 6
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 2,
                 "OldDestination": 2,
                 "PC": 7

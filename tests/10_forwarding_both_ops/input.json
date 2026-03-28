@@ -1,0 +1,5 @@
+[
+    "addi x1, x0, 7",
+    "add x2, x1, x1",
+    "mulu x3, x2, x2"
+]

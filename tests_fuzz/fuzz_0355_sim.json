@@ -1779,14 +1779,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 0,
                 "OldDestination": 0,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 3,
                 "OldDestination": 3,
@@ -1900,8 +1900,8 @@
             false,
             true,
             false,
-            true,
-            true,
+            false,
+            false,
             true,
             true,
             true,
@@ -2072,14 +2072,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 0,
                 "OldDestination": 0,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 3,
                 "OldDestination": 3,
@@ -2165,8 +2165,8 @@
             false,
             true,
             false,
-            true,
-            true,
+            false,
+            false,
             true,
             true,
             true,
@@ -2341,14 +2341,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 0,
                 "OldDestination": 0,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 3,
                 "OldDestination": 3,
@@ -2406,8 +2406,8 @@
             false,
             true,
             false,
-            true,
-            true,
+            false,
+            false,
             true,
             true,
             false,

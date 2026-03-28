@@ -1483,14 +1483,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 0,
                 "OldDestination": 0,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 6,
                 "OldDestination": 6,
@@ -1534,8 +1534,8 @@
             true,
             false,
             false,
-            true,
-            true,
+            false,
+            false,
             false,
             false,
             false,

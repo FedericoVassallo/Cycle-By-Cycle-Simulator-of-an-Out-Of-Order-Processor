@@ -1,0 +1,1 @@
+Two exceptions — first in program order matters

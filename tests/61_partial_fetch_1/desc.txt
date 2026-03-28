@@ -1,0 +1,1 @@
+5 instructions — partial last fetch

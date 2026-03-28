@@ -1,0 +1,8 @@
+[
+    "addi x1, x0, 100",
+    "addi x2, x0, 30",
+    "sub x3, x1, x2",
+    "sub x4, x3, x2",
+    "sub x5, x4, x2",
+    "sub x6, x5, x1"
+]
