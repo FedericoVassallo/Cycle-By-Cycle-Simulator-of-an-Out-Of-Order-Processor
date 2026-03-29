@@ -1746,10 +1746,10 @@
             false,
             true,
             false,
-            true,
-            true,
-            true,
-            true,
+            false,
+            false,
+            false,
+            false,
             true,
             true,
             true,
@@ -1817,28 +1817,28 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 29,
                 "OldDestination": 29,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 18,
                 "OldDestination": 18,
                 "PC": 5
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 15,
                 "OldDestination": 15,
                 "PC": 6
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 20,
                 "OldDestination": 20,
@@ -2009,9 +2009,9 @@
             false,
             true,
             false,
-            true,
-            true,
-            true,
+            false,
+            false,
+            false,
             false,
             false,
             false,
@@ -2084,21 +2084,21 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 29,
                 "OldDestination": 29,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 18,
                 "OldDestination": 18,
                 "PC": 5
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 15,
                 "OldDestination": 15,

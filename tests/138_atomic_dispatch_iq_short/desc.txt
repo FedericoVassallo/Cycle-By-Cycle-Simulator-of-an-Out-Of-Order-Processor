@@ -1,0 +1,1 @@
+DIR has 4 but IQ has only 2 slots — all 4 stall

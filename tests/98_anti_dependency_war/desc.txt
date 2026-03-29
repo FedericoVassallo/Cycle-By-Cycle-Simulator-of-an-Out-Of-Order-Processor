@@ -1,0 +1,1 @@
+Write-after-read — register renaming should handle this perfectly

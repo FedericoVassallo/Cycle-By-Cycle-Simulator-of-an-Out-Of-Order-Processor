@@ -1,0 +1,1 @@
+Exactly 32 instrs, fills FL

@@ -1,0 +1,1 @@
+Read x0 immediately after writing x0 — must get the NEW mapping (which has the computed value)

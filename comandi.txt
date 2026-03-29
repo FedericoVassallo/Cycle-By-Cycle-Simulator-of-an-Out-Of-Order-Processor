@@ -5,7 +5,12 @@ for the fuzzer:
 
 python3 fuzzer.py --generate 500 --seed 42 --run --sim ./simulator --ref ./ref_sim.py
 
+// even if the fuzzer I don't think is really that usefull as test 
+
 
 for the other test:
 
 bash tests/run_tests.sh ./run.sh
+
+
+

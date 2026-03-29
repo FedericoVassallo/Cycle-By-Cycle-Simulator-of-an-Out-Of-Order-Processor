@@ -1,0 +1,1 @@
+WAW chain through x1, then exception, then rollback must undo all x1 mappings

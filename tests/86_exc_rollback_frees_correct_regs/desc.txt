@@ -1,0 +1,1 @@
+Verify rollback returns CORRECT physical regs to free list in CORRECT order

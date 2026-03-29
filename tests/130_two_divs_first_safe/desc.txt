@@ -1,0 +1,1 @@
+Two back-to-back divisions — first safe, second causes exception

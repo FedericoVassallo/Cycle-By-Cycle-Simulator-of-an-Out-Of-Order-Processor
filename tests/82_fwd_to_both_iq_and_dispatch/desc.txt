@@ -1,0 +1,1 @@
+Forwarding simultaneously wakes IQ entries AND is read by dispatching instructions

@@ -1,0 +1,1 @@
+Same register as both operands — add x2, x1, x1

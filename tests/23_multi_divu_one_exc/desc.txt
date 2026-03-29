@@ -1,1 +1,0 @@
-Multiple divu only 3rd divides by zero

@@ -1,1 +1,0 @@
-All instructions write x0

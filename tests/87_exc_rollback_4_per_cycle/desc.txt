@@ -1,0 +1,1 @@
+Verify exactly 4 rolled back per cycle, not more, not fewer

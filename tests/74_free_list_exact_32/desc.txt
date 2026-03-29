@@ -1,0 +1,1 @@
+Exactly 32 instructions — uses ALL free regs, no stall needed

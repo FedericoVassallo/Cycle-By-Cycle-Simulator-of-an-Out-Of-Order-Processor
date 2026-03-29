@@ -1,0 +1,1 @@
+Write to all 32 architectural registers

@@ -1,1 +1,1 @@
-One of each opcode (no exception)
+All opcodes, no exception

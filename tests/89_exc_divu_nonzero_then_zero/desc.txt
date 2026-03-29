@@ -1,0 +1,1 @@
+divu with non-zero divisor, then divu with zero — only second excepts

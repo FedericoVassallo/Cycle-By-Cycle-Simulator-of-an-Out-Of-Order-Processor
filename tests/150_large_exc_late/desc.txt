@@ -1,0 +1,1 @@
+Exception at instruction 30 in 36-instruction program — tests late exception with heavy rollback

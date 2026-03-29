@@ -1,0 +1,1 @@
+Chain using all opcodes: add→sub→mulu→divu→remu→add

@@ -1,0 +1,1 @@
+64 independent instructions — FL exhausted twice, multiple stall/resume cycles

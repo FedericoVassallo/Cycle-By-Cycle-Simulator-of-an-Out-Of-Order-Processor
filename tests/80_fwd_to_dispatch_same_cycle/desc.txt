@@ -1,0 +1,1 @@
+Result forwarded same cycle as new instructions dispatched — dispatch reads from forwarding

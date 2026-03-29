@@ -1,0 +1,1 @@
+Stall one cycle, then dispatch immediately when resources freed

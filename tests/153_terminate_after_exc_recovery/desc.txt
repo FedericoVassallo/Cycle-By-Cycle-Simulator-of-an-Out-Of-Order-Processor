@@ -1,0 +1,1 @@
+Program terminates right after exception recovery completes

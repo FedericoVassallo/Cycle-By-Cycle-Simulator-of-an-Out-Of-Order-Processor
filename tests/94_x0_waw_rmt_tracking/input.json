@@ -1,0 +1,9 @@
+[
+    "addi x0, x0, 1",
+    "addi x0, x0, 2",
+    "addi x0, x0, 3",
+    "addi x0, x0, 4",
+    "divu x0, x0, x0",
+    "addi x1, x0, 99",
+    "addi x2, x0, 88"
+]

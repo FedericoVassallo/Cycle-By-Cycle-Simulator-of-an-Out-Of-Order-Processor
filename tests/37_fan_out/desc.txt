@@ -1,1 +1,0 @@
-Fan-out: one feeds many

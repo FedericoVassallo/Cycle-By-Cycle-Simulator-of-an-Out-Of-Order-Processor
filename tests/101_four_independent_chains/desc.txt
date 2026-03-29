@@ -1,0 +1,1 @@
+Four independent chains of length 4 — all 4 ALUs utilized in parallel

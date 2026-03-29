@@ -1,0 +1,1 @@
+4 instructions all woken by forwarding, all issue same cycle

@@ -1,0 +1,1 @@
+Exception must clear ALU stage 1 — instruction just issued must NOT forward

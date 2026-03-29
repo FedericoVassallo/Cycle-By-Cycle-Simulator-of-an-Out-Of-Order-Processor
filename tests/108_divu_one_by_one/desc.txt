@@ -1,0 +1,1 @@
+divu 1/1 = 1, no exception

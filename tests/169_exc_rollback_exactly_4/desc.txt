@@ -1,0 +1,1 @@
+Exactly 4 instructions to roll back — done in 1 rollback cycle

@@ -1630,9 +1630,9 @@
             false,
             false,
             true,
-            true,
-            true,
-            true,
+            false,
+            false,
+            false,
             false,
             false,
             false,
@@ -1699,21 +1699,21 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 6,
                 "OldDestination": 6,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
                 "PC": 5
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 0,
                 "OldDestination": 0,

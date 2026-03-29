@@ -163,19 +163,20 @@ def commit_stage(current, nxt):
 
 
 def execute_stage(current, nxt):
-    """Execute stage: tick ALUs, compute results, forward."""
-    # Mask to keep results in 64-bit unsigned range
+    """Execute stage: tick ALUs, compute results, forward.
+    Reads from CURRENT ExecutingInstructions (pipeline register, not same-cycle queue).
+    Even if commit cleared nxt ExecutingInstructions due to exception, ALU results
+    are still produced this cycle."""
     MASK64 = (1 << 64) - 1
 
-    finished_indices = []
+    # Clear nxt executing — we rebuild from current
+    nxt["ExecutingInstructions"] = []
 
-    for i in range(len(nxt["ExecutingInstructions"])):
-        ex = nxt["ExecutingInstructions"][i]
+    for ex in current["ExecutingInstructions"]:
+        ex = dict(ex)  # work on a copy
         ex["CyclesLeft"] -= 1
 
         if ex["CyclesLeft"] == 0:
-            finished_indices.append(i)
-
             # Compute result
             opA = ex["OpAValue"]
             opB = ex["OpBValue"]
@@ -213,12 +214,11 @@ def execute_stage(current, nxt):
                     al_entry["Exception"] = exception
                     break
 
-            # Write result and forward (only if no exception)
+            # Write result and forward (only if no exception from this instruction)
             if not exception:
                 nxt["PhysicalRegisterFile"][ex["rd"]] = result
                 nxt["BusyBitTable"][ex["rd"]] = False
 
-                # Forward to waiting IQ entries
                 for iq_entry in nxt["IntegerQueue"]:
                     if not iq_entry["OpAIsReady"] and iq_entry["OpARegTag"] == ex["rd"]:
                         iq_entry["OpAIsReady"] = True
@@ -228,10 +228,11 @@ def execute_stage(current, nxt):
                         iq_entry["OpBIsReady"] = True
                         iq_entry["OpBRegTag"] = 0
                         iq_entry["OpBValue"] = result
-
-    # Remove completed instructions (iterate in reverse)
-    for i in reversed(finished_indices):
-        nxt["ExecutingInstructions"].pop(i)
+            # Completed — do NOT add back
+        else:
+            # Not finished — keep for next cycle, unless exception flushed pipeline
+            if not nxt["ExceptionFlag"]:
+                nxt["ExecutingInstructions"].append(ex)
 
 
 def issue_stage(current, nxt):

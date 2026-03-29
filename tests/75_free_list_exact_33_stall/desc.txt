@@ -1,0 +1,1 @@
+33rd instruction must stall — free list empty until commit frees one

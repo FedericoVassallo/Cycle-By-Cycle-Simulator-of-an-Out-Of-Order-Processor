@@ -1,0 +1,1 @@
+Same register written and read repeatedly within batch

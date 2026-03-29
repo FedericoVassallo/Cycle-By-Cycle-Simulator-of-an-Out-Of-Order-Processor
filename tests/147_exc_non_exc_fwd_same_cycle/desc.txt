@@ -1,0 +1,1 @@
+Non-excepting instruction forwards same cycle as excepting — PRF update for non-exc should still happen

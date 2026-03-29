@@ -1,1 +1,1 @@
-Eight independent — two full fetch groups
+8 independent, two fetch groups

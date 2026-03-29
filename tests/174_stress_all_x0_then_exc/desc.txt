@@ -1,0 +1,1 @@
+Write x0 8 times then exception — rollback restores x0 mapping chain

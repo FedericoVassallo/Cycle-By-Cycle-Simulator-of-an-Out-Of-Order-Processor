@@ -1,0 +1,1 @@
+Fill AL to exactly 32 then try to dispatch 1 more — must stall

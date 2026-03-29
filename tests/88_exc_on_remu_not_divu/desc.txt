@@ -1,0 +1,1 @@
+remu triggers exception, divu does NOT — verify opcode distinction

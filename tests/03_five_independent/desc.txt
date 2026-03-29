@@ -1,1 +1,1 @@
-Five independent instructions
+5 independent instrs, fetch 4+1

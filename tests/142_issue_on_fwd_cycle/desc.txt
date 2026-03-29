@@ -1,0 +1,1 @@
+Instruction woken by forwarding AND issued in same cycle — not waiting one more cycle

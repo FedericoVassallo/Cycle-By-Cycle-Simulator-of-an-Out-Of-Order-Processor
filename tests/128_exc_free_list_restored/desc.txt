@@ -1,0 +1,1 @@
+After full recovery, free list has all non-mapped registers

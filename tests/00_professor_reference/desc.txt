@@ -1,1 +1,1 @@
-Professor's reference test case (24 instructions with divu/remu exceptions)
+Professor's reference test (24 instructions with divu/remu exceptions)

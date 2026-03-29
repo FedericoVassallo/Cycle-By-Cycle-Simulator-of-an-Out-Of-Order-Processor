@@ -1,0 +1,1 @@
+Exception occurs while dispatch is stalled — DIR should be cleared

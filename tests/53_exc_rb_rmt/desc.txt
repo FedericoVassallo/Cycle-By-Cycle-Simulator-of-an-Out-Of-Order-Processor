@@ -1,0 +1,1 @@
+Rollback restores RMT same-reg writes

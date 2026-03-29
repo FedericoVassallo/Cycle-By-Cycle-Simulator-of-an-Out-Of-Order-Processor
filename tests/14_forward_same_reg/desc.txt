@@ -1,0 +1,1 @@
+Same reg to both opA and opB

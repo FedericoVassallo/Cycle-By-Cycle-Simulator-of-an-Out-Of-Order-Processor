@@ -1922,10 +1922,10 @@
             true,
             true,
             true,
+            false,
+            false,
             true,
-            true,
-            true,
-            true,
+            false,
             true,
             true,
             true,
@@ -1994,14 +1994,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 23,
                 "OldDestination": 23,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 21,
                 "OldDestination": 21,
@@ -2015,7 +2015,7 @@
                 "PC": 6
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
@@ -2221,10 +2221,10 @@
             true,
             true,
             true,
+            false,
+            false,
             true,
-            true,
-            true,
-            true,
+            false,
             true,
             true,
             true,
@@ -2297,14 +2297,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 23,
                 "OldDestination": 23,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 21,
                 "OldDestination": 21,
@@ -2318,7 +2318,7 @@
                 "PC": 6
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
@@ -2496,10 +2496,10 @@
             true,
             true,
             true,
+            false,
+            false,
             true,
-            true,
-            true,
-            true,
+            false,
             false,
             false,
             false,
@@ -2576,14 +2576,14 @@
                 "PC": 3
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 23,
                 "OldDestination": 23,
                 "PC": 4
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 21,
                 "OldDestination": 21,
@@ -2597,7 +2597,7 @@
                 "PC": 6
             },
             {
-                "Done": false,
+                "Done": true,
                 "Exception": false,
                 "LogicalDestination": 31,
                 "OldDestination": 31,

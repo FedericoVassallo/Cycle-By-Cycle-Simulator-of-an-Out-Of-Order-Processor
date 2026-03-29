@@ -1,0 +1,1 @@
+Use forwarded value before it's committed — tests that forwarding path works

@@ -1980,15 +1980,15 @@
                 "PC": 3
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 8,
                 "OldDestination": 8,
                 "PC": 4
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
                 "PC": 5
@@ -2277,15 +2277,15 @@
                 "PC": 3
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 8,
                 "OldDestination": 8,
                 "PC": 4
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
                 "PC": 5
@@ -2550,15 +2550,15 @@
                 "PC": 3
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 8,
                 "OldDestination": 8,
                 "PC": 4
             },
             {
-                "Done": false,
-                "Exception": false,
+                "Done": true,
+                "Exception": true,
                 "LogicalDestination": 31,
                 "OldDestination": 31,
                 "PC": 5

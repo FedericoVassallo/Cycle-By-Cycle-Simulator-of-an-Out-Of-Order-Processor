@@ -1,0 +1,1 @@
+After exception recovery, all BBT entries for rolled-back regs are false

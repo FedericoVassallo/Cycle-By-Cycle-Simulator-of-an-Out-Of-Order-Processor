@@ -1,0 +1,1 @@
+Write all 32 regs

@@ -1,0 +1,1 @@
+24-instruction program — 6 fetch groups, complex scheduling

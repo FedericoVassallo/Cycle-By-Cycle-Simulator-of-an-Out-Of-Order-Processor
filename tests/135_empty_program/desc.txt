@@ -1,0 +1,1 @@
+Zero instructions — should immediately terminate with initial state

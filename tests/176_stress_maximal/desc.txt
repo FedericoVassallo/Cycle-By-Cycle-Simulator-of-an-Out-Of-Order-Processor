@@ -1,0 +1,1 @@
+Maximal stress: 64 instructions, mixed deps, WAW, x0 writes, late exception
