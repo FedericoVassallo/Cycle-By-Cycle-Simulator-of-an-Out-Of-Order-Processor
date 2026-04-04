@@ -1,17 +1,6 @@
 [
-  "add x0, x8, x19",
-  "sub x0, x9, x2",
-  "addi x0, x21, -32430",
-  "sub x0, x6, x9",
-  "addi x0, x6, 46",
-  "mulu x0, x23, x11",
-  "mulu x0, x4, x28",
-  "add x0, x27, x25",
-  "mulu x0, x20, x13",
-  "divu x0, x2, x7",
-  "remu x0, x5, x6",
-  "addi x0, x30, -1268625951",
-  "remu x0, x2, x15",
-  "sub x0, x22, x12",
-  "remu x0, x12, x25"
+  "addi x10, x3, 29102",
+  "add x10, x5, x15",
+  "mulu x10, x20, x0",
+  "sub x10, x4, x20"
 ]

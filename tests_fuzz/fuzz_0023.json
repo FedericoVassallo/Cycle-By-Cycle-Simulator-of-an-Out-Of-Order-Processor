@@ -1,4 +1,8 @@
 [
-  "add x1, x14, x8",
-  "sub x1, x25, x23"
+  "sub x0, x15, x27",
+  "mulu x20, x0, x19",
+  "addi x21, x19, 0",
+  "mulu x5, x7, x21",
+  "add x17, x27, x9",
+  "mulu x13, x18, x13"
 ]

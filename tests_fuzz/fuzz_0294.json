@@ -1,3 +1,10 @@
 [
-  "add x0, x15, x20"
+  "add x30, x29, x25",
+  "add x4, x29, x17",
+  "addi x0, x10, 2103065121",
+  "sub x0, x12, x21",
+  "divu x8, x7, x0",
+  "addi x9, x8, 25",
+  "addi x1, x8, 94",
+  "addi x28, x8, 8"
 ]

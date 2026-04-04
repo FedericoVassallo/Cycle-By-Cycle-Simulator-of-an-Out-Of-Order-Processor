@@ -3,7 +3,7 @@
 
 for the fuzzer:
 
-python3 fuzzer.py --generate 500 --seed 42 --run --sim ./simulator --ref ./ref_sim.py
+python3 fuzzer.py --generate 500 --seed 12 --run --sim ./simulator --ref ./ref_sim.py
 
 // even if the fuzzer I don't think is really that usefull as test 
 

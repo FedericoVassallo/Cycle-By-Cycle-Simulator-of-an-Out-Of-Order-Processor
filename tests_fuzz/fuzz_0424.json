@@ -1,3 +1,5 @@
 [
-  "divu x31, x8, x23"
+  "mulu x13, x6, x15",
+  "add x6, x26, x4",
+  "remu x17, x9, x0"
 ]

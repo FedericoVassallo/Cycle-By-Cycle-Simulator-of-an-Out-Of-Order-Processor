@@ -1,6 +1,18 @@
 [
-  "mulu x31, x11, x29",
-  "divu x26, x24, x0",
-  "addi x18, x11, 16739",
-  "sub x4, x26, x4"
+  "sub x18, x3, x8",
+  "add x8, x17, x16",
+  "mulu x1, x21, x31",
+  "add x6, x21, x26",
+  "sub x11, x18, x13",
+  "addi x12, x4, -13427",
+  "mulu x2, x23, x13",
+  "add x21, x8, x11",
+  "addi x21, x17, -1506050952",
+  "sub x30, x14, x31",
+  "addi x27, x4, 15781",
+  "add x18, x15, x13",
+  "sub x21, x20, x9",
+  "addi x28, x14, -30138",
+  "mulu x13, x18, x3",
+  "addi x31, x26, 0"
 ]

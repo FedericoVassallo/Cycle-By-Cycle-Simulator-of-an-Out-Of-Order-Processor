@@ -1,7 +1,3 @@
 [
-  "addi x20, x0, 22",
-  "add x30, x20, x6",
-  "sub x10, x30, x16",
-  "addi x18, x10, 3",
-  "addi x10, x18, 10"
+  "addi x1, x0, 74"
 ]

@@ -1,6 +1,5 @@
 [
-  "divu x23, x18, x11",
-  "mulu x2, x4, x25",
-  "mulu x28, x23, x23",
-  "mulu x30, x19, x24"
+  "sub x9, x23, x26",
+  "mulu x20, x31, x8",
+  "remu x24, x6, x0"
 ]

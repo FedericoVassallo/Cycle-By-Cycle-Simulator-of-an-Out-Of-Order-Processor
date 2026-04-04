@@ -1,27 +1,3 @@
 [
-  "addi x0, x4, 6208",
-  "addi x0, x28, 0",
-  "addi x0, x0, -357",
-  "sub x0, x31, x6",
-  "add x0, x30, x15",
-  "sub x0, x21, x28",
-  "mulu x0, x8, x7",
-  "sub x0, x15, x2",
-  "sub x0, x19, x3",
-  "mulu x0, x26, x16",
-  "sub x0, x5, x28",
-  "sub x0, x5, x3",
-  "addi x0, x17, -450534306",
-  "add x0, x4, x24",
-  "addi x0, x29, -3382543714988186413",
-  "remu x0, x31, x13",
-  "mulu x0, x1, x20",
-  "mulu x0, x18, x23",
-  "remu x0, x12, x6",
-  "remu x0, x6, x14",
-  "add x0, x9, x22",
-  "mulu x0, x28, x0",
-  "remu x0, x31, x12",
-  "mulu x0, x6, x15",
-  "mulu x0, x1, x21"
+  "addi x26, x0, 21"
 ]

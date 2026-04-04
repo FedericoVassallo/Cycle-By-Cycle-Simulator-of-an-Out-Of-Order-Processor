@@ -1,4 +1,4 @@
 [
-  "addi x20, x18, 32471",
-  "divu x12, x9, x0"
+  "divu x10, x22, x0",
+  "mulu x19, x29, x25"
 ]

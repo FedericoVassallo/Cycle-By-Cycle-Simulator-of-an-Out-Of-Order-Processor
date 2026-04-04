@@ -208,7 +208,7 @@
         "IntegerQueue": []
     },
     {
-        "PC": 1,
+        "PC": 3,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -412,13 +412,15 @@
             63
         ],
         "DecodedPCs": [
-            0
+            0,
+            1,
+            2
         ],
         "ActiveList": [],
         "IntegerQueue": []
     },
     {
-        "PC": 1,
+        "PC": 3,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -494,18 +496,18 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
-            17,
+            34,
             18,
             19,
             20,
@@ -519,7 +521,7 @@
             28,
             29,
             30,
-            32
+            31
         ],
         "BusyBitTable": [
             false,
@@ -555,8 +557,8 @@
             false,
             false,
             true,
-            false,
-            false,
+            true,
+            true,
             false,
             false,
             false,
@@ -588,8 +590,6 @@
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -625,9 +625,23 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 31,
-                "OldDestination": 31,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
                 "PC": 0
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 6,
+                "OldDestination": 6,
+                "PC": 1
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 17,
+                "OldDestination": 17,
+                "PC": 2
             }
         ],
         "IntegerQueue": [
@@ -639,13 +653,35 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "mulu",
                 "PC": 0
+            },
+            {
+                "DestRegister": 33,
+                "OpAIsReady": true,
+                "OpARegTag": 0,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 0,
+                "OpCode": "add",
+                "PC": 1
+            },
+            {
+                "DestRegister": 34,
+                "OpAIsReady": true,
+                "OpARegTag": 0,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 0,
+                "OpCode": "remu",
+                "PC": 2
             }
         ]
     },
     {
-        "PC": 1,
+        "PC": 3,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -721,18 +757,18 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
-            17,
+            34,
             18,
             19,
             20,
@@ -746,7 +782,7 @@
             28,
             29,
             30,
-            32
+            31
         ],
         "BusyBitTable": [
             false,
@@ -782,8 +818,8 @@
             false,
             false,
             true,
-            false,
-            false,
+            true,
+            true,
             false,
             false,
             false,
@@ -815,8 +851,6 @@
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -852,15 +886,29 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 31,
-                "OldDestination": 31,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
                 "PC": 0
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 6,
+                "OldDestination": 6,
+                "PC": 1
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 17,
+                "OldDestination": 17,
+                "PC": 2
             }
         ],
         "IntegerQueue": []
     },
     {
-        "PC": 1,
+        "PC": 3,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -936,18 +984,18 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
-            17,
+            34,
             18,
             19,
             20,
@@ -961,7 +1009,7 @@
             28,
             29,
             30,
-            32
+            31
         ],
         "BusyBitTable": [
             false,
@@ -997,8 +1045,8 @@
             false,
             false,
             true,
-            false,
-            false,
+            true,
+            true,
             false,
             false,
             false,
@@ -1030,8 +1078,6 @@
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -1067,15 +1113,29 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 31,
-                "OldDestination": 31,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
                 "PC": 0
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 6,
+                "OldDestination": 6,
+                "PC": 1
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 17,
+                "OldDestination": 17,
+                "PC": 2
             }
         ],
         "IntegerQueue": []
     },
     {
-        "PC": 1,
+        "PC": 3,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -1151,18 +1211,18 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
-            17,
+            34,
             18,
             19,
             20,
@@ -1176,9 +1236,11 @@
             28,
             29,
             30,
-            32
+            31
         ],
         "BusyBitTable": [
+            false,
+            false,
             false,
             false,
             false,
@@ -1240,13 +1302,9 @@
             false,
             false,
             false,
-            false,
-            false,
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -1281,17 +1339,31 @@
         "ActiveList": [
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 31,
-                "OldDestination": 31,
+                "Exception": false,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
                 "PC": 0
+            },
+            {
+                "Done": true,
+                "Exception": false,
+                "LogicalDestination": 6,
+                "OldDestination": 6,
+                "PC": 1
+            },
+            {
+                "Done": true,
+                "Exception": true,
+                "LogicalDestination": 17,
+                "OldDestination": 17,
+                "PC": 2
             }
         ],
         "IntegerQueue": []
     },
     {
         "PC": 65536,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "Exception": true,
         "PhysicalRegisterFile": [
             0,
@@ -1366,18 +1438,18 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
-            17,
+            34,
             18,
             19,
             20,
@@ -1391,9 +1463,11 @@
             28,
             29,
             30,
-            32
+            31
         ],
         "BusyBitTable": [
+            false,
+            false,
             false,
             false,
             false,
@@ -1455,13 +1529,9 @@
             false,
             false,
             false,
-            false,
-            false,
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -1490,23 +1560,25 @@
             60,
             61,
             62,
-            63
+            63,
+            13,
+            6
         ],
         "DecodedPCs": [],
         "ActiveList": [
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 31,
-                "OldDestination": 31,
-                "PC": 0
+                "LogicalDestination": 17,
+                "OldDestination": 17,
+                "PC": 2
             }
         ],
         "IntegerQueue": []
     },
     {
         "PC": 65536,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "Exception": true,
         "PhysicalRegisterFile": [
             0,
@@ -1581,14 +1653,14 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
@@ -1675,8 +1747,6 @@
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -1706,7 +1776,9 @@
             61,
             62,
             63,
-            32
+            13,
+            6,
+            34
         ],
         "DecodedPCs": [],
         "ActiveList": [],
@@ -1714,7 +1786,7 @@
     },
     {
         "PC": 65536,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "Exception": false,
         "PhysicalRegisterFile": [
             0,
@@ -1789,14 +1861,14 @@
             3,
             4,
             5,
-            6,
+            33,
             7,
             8,
             9,
             10,
             11,
             12,
-            13,
+            32,
             14,
             15,
             16,
@@ -1883,8 +1955,6 @@
             false
         ],
         "FreeList": [
-            33,
-            34,
             35,
             36,
             37,
@@ -1914,7 +1984,9 @@
             61,
             62,
             63,
-            32
+            13,
+            6,
+            34
         ],
         "DecodedPCs": [],
         "ActiveList": [],

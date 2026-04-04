@@ -425,28 +425,28 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 32,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             }
@@ -564,7 +564,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "mulu",
                 "PC": 0
             },
             {
@@ -575,7 +575,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "add",
+                "OpCode": "sub",
                 "PC": 1
             },
             {
@@ -586,7 +586,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "sub",
+                "OpCode": "remu",
                 "PC": 2
             },
             {
@@ -680,7 +680,7 @@
             8,
             9,
             10,
-            35,
+            11,
             12,
             13,
             14,
@@ -698,7 +698,7 @@
             26,
             27,
             28,
-            29,
+            35,
             30,
             31
         ]
@@ -708,56 +708,56 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 32,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             }
@@ -871,7 +871,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "add",
                 "PC": 4
             },
             {
@@ -881,8 +881,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
-                "OpCode": "sub",
+                "OpBValue": 1,
+                "OpCode": "add",
                 "PC": 5
             },
             {
@@ -893,7 +893,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "mulu",
                 "PC": 6
             },
             {
@@ -987,7 +987,7 @@
             8,
             9,
             10,
-            39,
+            11,
             12,
             13,
             14,
@@ -1005,7 +1005,7 @@
             26,
             27,
             28,
-            29,
+            39,
             30,
             31
         ]
@@ -1015,84 +1015,84 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 32,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 39,
                 "PC": 8
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 40,
                 "PC": 9
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 41,
                 "PC": 10
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 42,
                 "PC": 11
             }
@@ -1202,7 +1202,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "sub",
                 "PC": 8
             },
             {
@@ -1213,7 +1213,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "remu",
                 "PC": 9
             },
             {
@@ -1223,8 +1223,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 1,
-                "OpCode": "add",
+                "OpBValue": 0,
+                "OpCode": "divu",
                 "PC": 10
             },
             {
@@ -1234,7 +1234,7 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
+                "OpBValue": 2485,
                 "OpCode": "add",
                 "PC": 11
             }
@@ -1318,7 +1318,7 @@
             8,
             9,
             10,
-            43,
+            11,
             12,
             13,
             14,
@@ -1336,7 +1336,7 @@
             26,
             27,
             28,
-            29,
+            43,
             30,
             31
         ]
@@ -1345,113 +1345,113 @@
         "ActiveList": [
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 32,
                 "PC": 1
             },
             {
                 "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
+                "Exception": true,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 39,
                 "PC": 8
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 40,
                 "PC": 9
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 41,
                 "PC": 10
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 42,
                 "PC": 11
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 43,
                 "PC": 12
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 44,
                 "PC": 13
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 45,
                 "PC": 14
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 46,
                 "PC": 15
             }
@@ -1489,9 +1489,9 @@
             false,
             false,
             false,
+            false,
+            false,
             true,
-            false,
-            false,
             false,
             true,
             true,
@@ -1525,7 +1525,8 @@
         "DecodedPCs": [
             16,
             17,
-            18
+            18,
+            19
         ],
         "Exception": false,
         "ExceptionPC": 0,
@@ -1556,7 +1557,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "add",
+                "OpCode": "sub",
                 "PC": 12
             },
             {
@@ -1566,8 +1567,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 1173132440,
-                "OpCode": "add",
+                "OpBValue": 0,
+                "OpCode": "sub",
                 "PC": 13
             },
             {
@@ -1577,8 +1578,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
-                "OpCode": "mulu",
+                "OpBValue": 3434195360951143855,
+                "OpCode": "add",
                 "PC": 14
             },
             {
@@ -1588,12 +1589,12 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
+                "OpBValue": 15915374576608108941,
                 "OpCode": "add",
                 "PC": 15
             }
         ],
-        "PC": 19,
+        "PC": 20,
         "PhysicalRegisterFile": [
             0,
             0,
@@ -1672,7 +1673,7 @@
             8,
             9,
             10,
-            47,
+            11,
             12,
             13,
             14,
@@ -1690,7 +1691,7 @@
             26,
             27,
             28,
-            29,
+            47,
             30,
             31
         ]
@@ -1700,112 +1701,98 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
-                "PC": 0
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 32,
-                "PC": 1
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 39,
                 "PC": 8
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 40,
                 "PC": 9
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 41,
                 "PC": 10
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 42,
                 "PC": 11
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 43,
                 "PC": 12
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 44,
                 "PC": 13
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 45,
                 "PC": 14
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 46,
                 "PC": 15
             }
@@ -1843,13 +1830,13 @@
             false,
             false,
             false,
+            false,
+            false,
             true,
             false,
             false,
             false,
-            true,
             false,
-            true,
             true,
             true,
             true,
@@ -1878,7 +1865,7 @@
         ],
         "DecodedPCs": [],
         "Exception": true,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -1895,7 +1882,9 @@
             60,
             61,
             62,
-            63
+            63,
+            29,
+            32
         ],
         "IntegerQueue": [],
         "PC": 65536,
@@ -1937,7 +1926,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -1977,7 +1966,7 @@
             8,
             9,
             10,
-            47,
+            11,
             12,
             13,
             14,
@@ -1995,7 +1984,7 @@
             26,
             27,
             28,
-            29,
+            47,
             30,
             31
         ]
@@ -2005,84 +1994,70 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
-                "PC": 0
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 32,
-                "PC": 1
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 39,
                 "PC": 8
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 40,
                 "PC": 9
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 41,
                 "PC": 10
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 42,
                 "PC": 11
             }
@@ -2120,13 +2095,13 @@
             false,
             false,
             false,
+            false,
+            false,
             true,
             false,
             false,
             false,
-            true,
             false,
-            true,
             true,
             true,
             true,
@@ -2155,7 +2130,7 @@
         ],
         "DecodedPCs": [],
         "Exception": true,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -2173,6 +2148,8 @@
             61,
             62,
             63,
+            29,
+            32,
             47,
             46,
             45,
@@ -2218,7 +2195,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2258,7 +2235,7 @@
             8,
             9,
             10,
-            43,
+            11,
             12,
             13,
             14,
@@ -2276,7 +2253,7 @@
             26,
             27,
             28,
-            29,
+            43,
             30,
             31
         ]
@@ -2286,56 +2263,42 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
-                "PC": 0
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 32,
-                "PC": 1
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 35,
                 "PC": 4
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 36,
                 "PC": 5
             },
             {
                 "Done": true,
-                "Exception": true,
-                "LogicalDestination": 11,
+                "Exception": false,
+                "LogicalDestination": 29,
                 "OldDestination": 37,
                 "PC": 6
             },
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 38,
                 "PC": 7
             }
@@ -2373,13 +2336,13 @@
             false,
             false,
             false,
+            false,
+            false,
             true,
             false,
             false,
             false,
-            true,
             false,
-            true,
             true,
             false,
             false,
@@ -2408,7 +2371,7 @@
         ],
         "DecodedPCs": [],
         "Exception": true,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -2426,6 +2389,8 @@
             61,
             62,
             63,
+            29,
+            32,
             47,
             46,
             45,
@@ -2475,7 +2440,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2515,7 +2480,7 @@
             8,
             9,
             10,
-            39,
+            11,
             12,
             13,
             14,
@@ -2533,7 +2498,7 @@
             26,
             27,
             28,
-            29,
+            39,
             30,
             31
         ]
@@ -2543,33 +2508,21 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 11,
-                "OldDestination": 11,
-                "PC": 0
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
-                "OldDestination": 32,
-                "PC": 1
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 33,
                 "PC": 2
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 11,
+                "LogicalDestination": 29,
                 "OldDestination": 34,
                 "PC": 3
             }
         ],
         "BusyBitTable": [
+            false,
+            false,
             false,
             false,
             false,
@@ -2631,13 +2584,11 @@
             false,
             false,
             false,
-            false,
-            false,
             false
         ],
         "DecodedPCs": [],
         "Exception": true,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -2655,6 +2606,8 @@
             61,
             62,
             63,
+            29,
+            32,
             47,
             46,
             45,
@@ -2708,7 +2661,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2748,7 +2701,7 @@
             8,
             9,
             10,
-            35,
+            11,
             12,
             13,
             14,
@@ -2766,7 +2719,7 @@
             26,
             27,
             28,
-            29,
+            35,
             30,
             31
         ]
@@ -2841,7 +2794,7 @@
         ],
         "DecodedPCs": [],
         "Exception": true,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -2859,6 +2812,8 @@
             61,
             62,
             63,
+            29,
+            32,
             47,
             46,
             45,
@@ -2872,9 +2827,7 @@
             37,
             36,
             35,
-            34,
-            33,
-            32
+            34
         ],
         "IntegerQueue": [],
         "PC": 65536,
@@ -2916,7 +2869,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2974,7 +2927,7 @@
             26,
             27,
             28,
-            29,
+            33,
             30,
             31
         ]
@@ -3049,7 +3002,7 @@
         ],
         "DecodedPCs": [],
         "Exception": false,
-        "ExceptionPC": 0,
+        "ExceptionPC": 2,
         "FreeList": [
             48,
             49,
@@ -3067,6 +3020,8 @@
             61,
             62,
             63,
+            29,
+            32,
             47,
             46,
             45,
@@ -3080,9 +3035,7 @@
             37,
             36,
             35,
-            34,
-            33,
-            32
+            34
         ],
         "IntegerQueue": [],
         "PC": 65536,
@@ -3124,7 +3077,7 @@
             0,
             0,
             0,
-            0,
+            1,
             0,
             0,
             0,
@@ -3182,7 +3135,7 @@
             26,
             27,
             28,
-            29,
+            33,
             30,
             31
         ]

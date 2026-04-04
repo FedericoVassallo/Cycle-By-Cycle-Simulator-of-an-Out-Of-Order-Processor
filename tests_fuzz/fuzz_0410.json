@@ -1,21 +1,6 @@
 [
-  "sub x12, x5, x0",
-  "mulu x2, x4, x19",
-  "mulu x7, x30, x3",
-  "addi x30, x14, 305060115862538664",
-  "mulu x29, x14, x5",
-  "sub x24, x17, x10",
-  "sub x1, x11, x15",
-  "addi x16, x12, 23836",
-  "sub x28, x31, x13",
-  "addi x15, x31, -1",
-  "addi x5, x15, 2",
-  "add x25, x4, x25",
-  "sub x25, x1, x22",
-  "mulu x9, x28, x16",
-  "sub x1, x23, x26",
-  "sub x10, x24, x5",
-  "mulu x6, x12, x17",
-  "addi x4, x9, -1945435767",
-  "sub x25, x10, x5"
+  "addi x1, x0, 19",
+  "addi x2, x0, 92",
+  "addi x3, x0, 72",
+  "addi x4, x0, 77"
 ]

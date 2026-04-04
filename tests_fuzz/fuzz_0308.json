@@ -1,3 +1,12 @@
 [
-  "addi x1, x0, 82"
+  "addi x20, x0, 2",
+  "sub x10, x20, x22",
+  "add x5, x10, x27",
+  "sub x11, x5, x10",
+  "addi x13, x11, 5",
+  "addi x31, x13, -1",
+  "sub x24, x31, x16",
+  "sub x15, x24, x2",
+  "add x18, x15, x28",
+  "add x11, x18, x4"
 ]

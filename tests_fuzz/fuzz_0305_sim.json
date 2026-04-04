@@ -537,7 +537,7 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 5,
+                "OpBValue": 2,
                 "OpCode": "add",
                 "PC": 0
             }
@@ -1221,7 +1221,7 @@
             0,
             0,
             0,
-            5,
+            2,
             0,
             0,
             0,
@@ -1429,7 +1429,7 @@
             0,
             0,
             0,
-            5,
+            2,
             0,
             0,
             0,

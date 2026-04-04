@@ -1,3 +1,5 @@
 [
-  "sub x2, x22, x18"
+  "mulu x21, x8, x7",
+  "sub x21, x18, x8",
+  "mulu x31, x4, x8"
 ]

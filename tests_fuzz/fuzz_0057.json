@@ -1,4 +1,9 @@
 [
-  "divu x16, x22, x23",
-  "divu x7, x27, x4"
+  "addi x3, x23, 32627",
+  "addi x3, x18, -25",
+  "addi x4, x8, 0",
+  "addi x2, x26, 70",
+  "addi x27, x13, 1904846986",
+  "addi x1, x3, 0",
+  "addi x29, x28, 1"
 ]

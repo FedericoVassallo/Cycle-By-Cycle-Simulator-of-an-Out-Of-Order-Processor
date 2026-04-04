@@ -422,8 +422,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 0,
-                "OldDestination": 0,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 0
             }
         ],
@@ -537,8 +537,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
-                "OpCode": "sub",
+                "OpBValue": 18,
+                "OpCode": "add",
                 "PC": 0
             }
         ],
@@ -610,8 +610,8 @@
             0
         ],
         "RegisterMapTable": [
+            0,
             32,
-            1,
             2,
             3,
             4,
@@ -649,8 +649,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 0,
-                "OldDestination": 0,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 0
             }
         ],
@@ -825,8 +825,8 @@
             0
         ],
         "RegisterMapTable": [
+            0,
             32,
-            1,
             2,
             3,
             4,
@@ -864,8 +864,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 0,
-                "OldDestination": 0,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 0
             }
         ],
@@ -1040,8 +1040,8 @@
             0
         ],
         "RegisterMapTable": [
+            0,
             32,
-            1,
             2,
             3,
             4,
@@ -1079,8 +1079,8 @@
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 0,
-                "OldDestination": 0,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 0
             }
         ],
@@ -1221,7 +1221,7 @@
             0,
             0,
             0,
-            0,
+            18,
             0,
             0,
             0,
@@ -1255,8 +1255,8 @@
             0
         ],
         "RegisterMapTable": [
+            0,
             32,
-            1,
             2,
             3,
             4,
@@ -1392,7 +1392,7 @@
             61,
             62,
             63,
-            0
+            1
         ],
         "IntegerQueue": [],
         "PC": 1,
@@ -1429,7 +1429,7 @@
             0,
             0,
             0,
-            0,
+            18,
             0,
             0,
             0,
@@ -1463,8 +1463,8 @@
             0
         ],
         "RegisterMapTable": [
+            0,
             32,
-            1,
             2,
             3,
             4,

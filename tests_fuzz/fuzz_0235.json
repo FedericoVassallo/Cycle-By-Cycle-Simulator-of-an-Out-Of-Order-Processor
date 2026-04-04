@@ -1,7 +1,6 @@
 [
-  "divu x20, x2, x31",
-  "addi x5, x28, -598236541",
-  "mulu x8, x22, x11",
-  "mulu x30, x31, x31",
-  "divu x16, x18, x17"
+  "add x22, x29, x13",
+  "addi x7, x3, -1486",
+  "divu x30, x21, x0",
+  "mulu x31, x1, x7"
 ]

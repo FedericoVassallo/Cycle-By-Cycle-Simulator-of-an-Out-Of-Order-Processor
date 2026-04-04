@@ -1,3 +1,7 @@
 [
-  "mulu x13, x21, x19"
+  "mulu x17, x10, x26",
+  "addi x2, x31, 0",
+  "add x27, x26, x31",
+  "add x20, x0, x26",
+  "remu x3, x12, x0"
 ]
