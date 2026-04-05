@@ -1,7 +1,3 @@
 [
-  "addi x1, x0, 90",
-  "addi x2, x0, 62",
-  "addi x3, x0, 87",
-  "addi x4, x0, 57",
-  "addi x5, x0, 95"
+  "addi x23, x9, -870153440"
 ]

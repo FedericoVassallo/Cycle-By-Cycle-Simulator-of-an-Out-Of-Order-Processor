@@ -1,3 +1,15 @@
 [
-  "divu x8, x30, x0"
+  "addi x6, x16, 0",
+  "divu x29, x18, x20",
+  "remu x3, x22, x26",
+  "addi x1, x17, -2",
+  "addi x3, x9, -1",
+  "add x13, x27, x13",
+  "add x4, x4, x17",
+  "add x24, x18, x2",
+  "divu x6, x26, x27",
+  "divu x1, x25, x13",
+  "mulu x23, x18, x1",
+  "add x15, x4, x23",
+  "remu x28, x9, x28"
 ]

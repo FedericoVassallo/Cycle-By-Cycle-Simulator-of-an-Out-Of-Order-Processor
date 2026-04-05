@@ -422,8 +422,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 0,
+                "OldDestination": 0,
                 "PC": 0
             }
         ],
@@ -538,7 +538,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "divu",
+                "OpCode": "remu",
                 "PC": 0
             }
         ],
@@ -610,7 +610,7 @@
             0
         ],
         "RegisterMapTable": [
-            0,
+            32,
             1,
             2,
             3,
@@ -619,7 +619,7 @@
             6,
             7,
             8,
-            32,
+            9,
             10,
             11,
             12,
@@ -649,8 +649,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 0,
+                "OldDestination": 0,
                 "PC": 0
             }
         ],
@@ -825,7 +825,7 @@
             0
         ],
         "RegisterMapTable": [
-            0,
+            32,
             1,
             2,
             3,
@@ -834,7 +834,7 @@
             6,
             7,
             8,
-            32,
+            9,
             10,
             11,
             12,
@@ -864,8 +864,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 0,
+                "OldDestination": 0,
                 "PC": 0
             }
         ],
@@ -1040,7 +1040,7 @@
             0
         ],
         "RegisterMapTable": [
-            0,
+            32,
             1,
             2,
             3,
@@ -1049,7 +1049,7 @@
             6,
             7,
             8,
-            32,
+            9,
             10,
             11,
             12,
@@ -1079,8 +1079,8 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 0,
+                "OldDestination": 0,
                 "PC": 0
             }
         ],
@@ -1255,7 +1255,7 @@
             0
         ],
         "RegisterMapTable": [
-            0,
+            32,
             1,
             2,
             3,
@@ -1264,7 +1264,7 @@
             6,
             7,
             8,
-            32,
+            9,
             10,
             11,
             12,
@@ -1294,8 +1294,8 @@
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 0,
+                "OldDestination": 0,
                 "PC": 0
             }
         ],
@@ -1470,7 +1470,7 @@
             0
         ],
         "RegisterMapTable": [
-            0,
+            32,
             1,
             2,
             3,
@@ -1479,7 +1479,7 @@
             6,
             7,
             8,
-            32,
+            9,
             10,
             11,
             12,

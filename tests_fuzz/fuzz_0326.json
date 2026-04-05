@@ -1,3 +1,13 @@
 [
-  "divu x13, x11, x0"
+  "addi x1, x0, 47",
+  "addi x2, x0, 57",
+  "addi x3, x0, 97",
+  "addi x4, x0, 41",
+  "addi x5, x0, 50",
+  "addi x6, x0, 36",
+  "addi x7, x0, 87",
+  "addi x8, x0, 29",
+  "mulu x14, x2, x1",
+  "sub x13, x7, x8",
+  "mulu x1, x4, x3"
 ]

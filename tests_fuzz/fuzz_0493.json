@@ -1,18 +1,4 @@
 [
-  "addi x14, x25, 0",
-  "mulu x6, x0, x19",
-  "addi x20, x6, 0",
-  "sub x22, x9, x5",
-  "mulu x22, x12, x14",
-  "addi x25, x20, -1",
-  "addi x18, x27, 0",
-  "addi x24, x2, -75",
-  "remu x7, x7, x0",
-  "addi x9, x7, 34",
-  "sub x6, x13, x7",
-  "sub x21, x7, x19",
-  "sub x25, x31, x7",
-  "addi x1, x7, -2",
-  "sub x0, x7, x9",
-  "add x28, x7, x19"
+  "addi x1, x23, 13769",
+  "addi x22, x27, 323349717"
 ]

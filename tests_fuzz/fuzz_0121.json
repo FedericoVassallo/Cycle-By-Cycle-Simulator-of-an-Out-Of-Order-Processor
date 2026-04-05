@@ -1,8 +1,7 @@
 [
-  "addi x20, x4, -14904",
-  "addi x18, x27, 0",
-  "remu x31, x23, x0",
-  "add x24, x31, x29",
-  "addi x19, x24, 1",
-  "add x29, x19, x12"
+  "addi x1, x0, 43",
+  "addi x2, x0, 37",
+  "addi x3, x0, 52",
+  "addi x4, x0, 92",
+  "addi x5, x0, 56"
 ]

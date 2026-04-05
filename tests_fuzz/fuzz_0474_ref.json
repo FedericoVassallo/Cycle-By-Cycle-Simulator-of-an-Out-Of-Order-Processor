@@ -505,10 +505,10 @@
             14,
             15,
             16,
-            32,
+            17,
             18,
             19,
-            20,
+            32,
             21,
             22,
             23,
@@ -625,8 +625,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 17,
-                "OldDestination": 17,
+                "LogicalDestination": 20,
+                "OldDestination": 20,
                 "PC": 0
             }
         ],
@@ -639,7 +639,7 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "mulu",
+                "OpCode": "add",
                 "PC": 0
             }
         ]
@@ -732,10 +732,10 @@
             14,
             15,
             16,
-            32,
+            17,
             18,
             19,
-            20,
+            32,
             21,
             22,
             23,
@@ -852,8 +852,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 17,
-                "OldDestination": 17,
+                "LogicalDestination": 20,
+                "OldDestination": 20,
                 "PC": 0
             }
         ],
@@ -947,10 +947,10 @@
             14,
             15,
             16,
-            32,
+            17,
             18,
             19,
-            20,
+            32,
             21,
             22,
             23,
@@ -1067,8 +1067,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 17,
-                "OldDestination": 17,
+                "LogicalDestination": 20,
+                "OldDestination": 20,
                 "PC": 0
             }
         ],
@@ -1162,10 +1162,10 @@
             14,
             15,
             16,
-            32,
+            17,
             18,
             19,
-            20,
+            32,
             21,
             22,
             23,
@@ -1282,8 +1282,8 @@
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 17,
-                "OldDestination": 17,
+                "LogicalDestination": 20,
+                "OldDestination": 20,
                 "PC": 0
             }
         ],
@@ -1377,10 +1377,10 @@
             14,
             15,
             16,
-            32,
+            17,
             18,
             19,
-            20,
+            32,
             21,
             22,
             23,
@@ -1491,7 +1491,7 @@
             61,
             62,
             63,
-            17
+            20
         ],
         "DecodedPCs": [],
         "ActiveList": [],

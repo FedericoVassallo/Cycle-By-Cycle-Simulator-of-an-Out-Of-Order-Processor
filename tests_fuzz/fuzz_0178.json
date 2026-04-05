@@ -1,11 +1,11 @@
 [
-  "add x4, x2, x6",
-  "sub x4, x23, x7",
-  "add x3, x14, x24",
-  "mulu x28, x31, x24",
-  "sub x25, x16, x31",
-  "sub x26, x26, x0",
-  "mulu x16, x9, x3",
-  "addi x3, x10, 0",
-  "addi x10, x19, 0"
+  "addi x22, x0, 8",
+  "addi x16, x22, -2",
+  "sub x28, x16, x25",
+  "sub x17, x28, x4",
+  "add x7, x17, x25",
+  "sub x9, x7, x15",
+  "add x27, x9, x27",
+  "sub x7, x27, x0",
+  "add x29, x7, x7"
 ]

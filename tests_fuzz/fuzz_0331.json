@@ -1,7 +1,6 @@
 [
-  "add x7, x5, x10",
-  "mulu x6, x17, x15",
-  "mulu x29, x24, x2",
-  "sub x12, x29, x22",
-  "remu x24, x7, x0"
+  "addi x16, x21, 1381581253",
+  "add x21, x6, x3",
+  "sub x27, x17, x20",
+  "remu x6, x22, x4"
 ]

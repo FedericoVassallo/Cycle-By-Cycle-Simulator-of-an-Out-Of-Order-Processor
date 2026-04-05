@@ -1,3 +1,13 @@
 [
-  "addi x14, x0, 28"
+  "remu x0, x17, x30",
+  "remu x0, x20, x28",
+  "mulu x0, x25, x25",
+  "divu x0, x22, x18",
+  "addi x0, x16, 98",
+  "sub x0, x31, x15",
+  "addi x0, x12, 34",
+  "divu x0, x16, x30",
+  "remu x0, x19, x29",
+  "addi x0, x7, 71",
+  "addi x0, x14, 3840889569366984293"
 ]

@@ -422,8 +422,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 14,
-                "OldDestination": 14,
+                "LogicalDestination": 16,
+                "OldDestination": 16,
                 "PC": 0
             }
         ],
@@ -537,7 +537,7 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 1972851554981658469,
+                "OpBValue": 0,
                 "OpCode": "add",
                 "PC": 0
             }
@@ -624,9 +624,9 @@
             11,
             12,
             13,
-            32,
+            14,
             15,
-            16,
+            32,
             17,
             18,
             19,
@@ -649,8 +649,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 14,
-                "OldDestination": 14,
+                "LogicalDestination": 16,
+                "OldDestination": 16,
                 "PC": 0
             }
         ],
@@ -839,9 +839,9 @@
             11,
             12,
             13,
-            32,
+            14,
             15,
-            16,
+            32,
             17,
             18,
             19,
@@ -864,8 +864,8 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 14,
-                "OldDestination": 14,
+                "LogicalDestination": 16,
+                "OldDestination": 16,
                 "PC": 0
             }
         ],
@@ -1054,9 +1054,9 @@
             11,
             12,
             13,
-            32,
+            14,
             15,
-            16,
+            32,
             17,
             18,
             19,
@@ -1079,8 +1079,8 @@
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 14,
-                "OldDestination": 14,
+                "LogicalDestination": 16,
+                "OldDestination": 16,
                 "PC": 0
             }
         ],
@@ -1221,7 +1221,7 @@
             0,
             0,
             0,
-            1972851554981658469,
+            0,
             0,
             0,
             0,
@@ -1269,9 +1269,9 @@
             11,
             12,
             13,
-            32,
+            14,
             15,
-            16,
+            32,
             17,
             18,
             19,
@@ -1392,7 +1392,7 @@
             61,
             62,
             63,
-            14
+            16
         ],
         "IntegerQueue": [],
         "PC": 1,
@@ -1429,7 +1429,7 @@
             0,
             0,
             0,
-            1972851554981658469,
+            0,
             0,
             0,
             0,
@@ -1477,9 +1477,9 @@
             11,
             12,
             13,
-            32,
+            14,
             15,
-            16,
+            32,
             17,
             18,
             19,

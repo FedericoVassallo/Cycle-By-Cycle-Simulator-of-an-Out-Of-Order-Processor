@@ -1,14 +1,13 @@
 [
-  "addi x28, x27, 0",
-  "addi x15, x13, -86",
-  "addi x6, x25, -1917929632",
-  "addi x17, x26, 1",
-  "addi x15, x14, 1",
-  "addi x7, x22, -11888",
-  "addi x29, x19, -2964658506243451137",
-  "addi x10, x0, 592498672",
-  "addi x4, x19, -2",
-  "addi x2, x23, -3094203137104142368",
-  "addi x10, x7, -1",
-  "addi x12, x10, 0"
+  "addi x1, x0, 33",
+  "addi x2, x0, 50",
+  "addi x3, x0, 23",
+  "addi x4, x0, 33",
+  "addi x5, x0, 9",
+  "addi x6, x0, 30",
+  "addi x7, x0, 59",
+  "addi x8, x0, 10",
+  "sub x17, x5, x7",
+  "add x20, x2, x5",
+  "sub x25, x3, x4"
 ]

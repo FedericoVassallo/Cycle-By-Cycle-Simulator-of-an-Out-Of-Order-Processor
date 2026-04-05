@@ -1,8 +1,3 @@
 [
-  "addi x7, x5, -1",
-  "divu x12, x19, x30",
-  "divu x19, x25, x17",
-  "mulu x15, x9, x19",
-  "remu x27, x17, x7",
-  "remu x21, x20, x10"
+  "remu x18, x22, x0"
 ]

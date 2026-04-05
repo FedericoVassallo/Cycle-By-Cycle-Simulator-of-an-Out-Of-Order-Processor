@@ -421,7 +421,7 @@
         "IntegerQueue": []
     },
     {
-        "PC": 4,
+        "PC": 6,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -492,15 +492,15 @@
         ],
         "RegisterMapTable": [
             0,
-            1,
+            34,
             2,
             3,
             4,
             5,
             6,
             7,
-            35,
-            33,
+            8,
+            9,
             10,
             11,
             12,
@@ -513,15 +513,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            35,
             31
         ],
         "BusyBitTable": [
@@ -620,34 +620,37 @@
             62,
             63
         ],
-        "DecodedPCs": [],
+        "DecodedPCs": [
+            4,
+            5
+        ],
         "ActiveList": [
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 30,
-                "OldDestination": 30,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 27,
+                "OldDestination": 27,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 22,
-                "OldDestination": 22,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 8,
-                "OldDestination": 8,
+                "LogicalDestination": 30,
+                "OldDestination": 30,
                 "PC": 3
             }
         ],
@@ -659,8 +662,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 18446744072936878653,
-                "OpCode": "add",
+                "OpBValue": 0,
+                "OpCode": "sub",
                 "PC": 0
             },
             {
@@ -670,8 +673,8 @@
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
-                "OpCode": "sub",
+                "OpBValue": 18446744073709525230,
+                "OpCode": "add",
                 "PC": 1
             },
             {
@@ -682,24 +685,24 @@
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
                 "OpBValue": 0,
-                "OpCode": "mulu",
+                "OpCode": "remu",
                 "PC": 2
             },
             {
                 "DestRegister": 35,
-                "OpAIsReady": true,
-                "OpARegTag": 0,
+                "OpAIsReady": false,
+                "OpARegTag": 34,
                 "OpAValue": 0,
                 "OpBIsReady": true,
                 "OpBRegTag": 0,
-                "OpBValue": 0,
-                "OpCode": "divu",
+                "OpBValue": 18446744073709551612,
+                "OpCode": "add",
                 "PC": 3
             }
         ]
     },
     {
-        "PC": 4,
+        "PC": 6,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -770,19 +773,19 @@
         ],
         "RegisterMapTable": [
             0,
-            1,
+            34,
             2,
             3,
             4,
             5,
             6,
-            7,
-            35,
-            33,
+            36,
+            8,
+            9,
             10,
             11,
             12,
-            13,
+            37,
             14,
             15,
             16,
@@ -791,15 +794,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            35,
             31
         ],
         "BusyBitTable": [
@@ -839,8 +842,8 @@
             true,
             true,
             true,
-            false,
-            false,
+            true,
+            true,
             false,
             false,
             false,
@@ -869,8 +872,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -903,36 +904,84 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 30,
-                "OldDestination": 30,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 27,
+                "OldDestination": 27,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 22,
-                "OldDestination": 22,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 8,
-                "OldDestination": 8,
+                "LogicalDestination": 30,
+                "OldDestination": 30,
                 "PC": 3
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 7,
+                "OldDestination": 7,
+                "PC": 4
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
+                "PC": 5
             }
         ],
-        "IntegerQueue": []
+        "IntegerQueue": [
+            {
+                "DestRegister": 35,
+                "OpAIsReady": false,
+                "OpARegTag": 34,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 18446744073709551612,
+                "OpCode": "add",
+                "PC": 3
+            },
+            {
+                "DestRegister": 36,
+                "OpAIsReady": false,
+                "OpARegTag": 35,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 6,
+                "OpCode": "add",
+                "PC": 4
+            },
+            {
+                "DestRegister": 37,
+                "OpAIsReady": false,
+                "OpARegTag": 36,
+                "OpAValue": 0,
+                "OpBIsReady": false,
+                "OpBRegTag": 34,
+                "OpBValue": 0,
+                "OpCode": "add",
+                "PC": 5
+            }
+        ]
     },
     {
-        "PC": 4,
+        "PC": 6,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -1003,19 +1052,19 @@
         ],
         "RegisterMapTable": [
             0,
-            1,
+            34,
             2,
             3,
             4,
             5,
             6,
-            7,
-            35,
-            33,
+            36,
+            8,
+            9,
             10,
             11,
             12,
-            13,
+            37,
             14,
             15,
             16,
@@ -1024,15 +1073,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            35,
             31
         ],
         "BusyBitTable": [
@@ -1072,8 +1121,8 @@
             true,
             true,
             true,
-            false,
-            false,
+            true,
+            true,
             false,
             false,
             false,
@@ -1102,8 +1151,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -1136,36 +1183,84 @@
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 30,
-                "OldDestination": 30,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 27,
+                "OldDestination": 27,
                 "PC": 1
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 22,
-                "OldDestination": 22,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
                 "PC": 2
             },
             {
                 "Done": false,
                 "Exception": false,
-                "LogicalDestination": 8,
-                "OldDestination": 8,
+                "LogicalDestination": 30,
+                "OldDestination": 30,
                 "PC": 3
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 7,
+                "OldDestination": 7,
+                "PC": 4
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
+                "PC": 5
             }
         ],
-        "IntegerQueue": []
+        "IntegerQueue": [
+            {
+                "DestRegister": 35,
+                "OpAIsReady": false,
+                "OpARegTag": 34,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 18446744073709551612,
+                "OpCode": "add",
+                "PC": 3
+            },
+            {
+                "DestRegister": 36,
+                "OpAIsReady": false,
+                "OpARegTag": 35,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 6,
+                "OpCode": "add",
+                "PC": 4
+            },
+            {
+                "DestRegister": 37,
+                "OpAIsReady": false,
+                "OpARegTag": 36,
+                "OpAValue": 0,
+                "OpBIsReady": false,
+                "OpBRegTag": 34,
+                "OpBValue": 0,
+                "OpCode": "add",
+                "PC": 5
+            }
+        ]
     },
     {
-        "PC": 4,
+        "PC": 6,
         "ExceptionPC": 0,
         "Exception": false,
         "PhysicalRegisterFile": [
@@ -1201,8 +1296,8 @@
             0,
             0,
             0,
-            18446744072936878653,
             0,
+            18446744073709525230,
             0,
             0,
             0,
@@ -1236,19 +1331,19 @@
         ],
         "RegisterMapTable": [
             0,
-            1,
+            34,
             2,
             3,
             4,
             5,
             6,
-            7,
-            35,
-            33,
+            36,
+            8,
+            9,
             10,
             11,
             12,
-            13,
+            37,
             14,
             15,
             16,
@@ -1257,15 +1352,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            35,
             31
         ],
         "BusyBitTable": [
@@ -1303,10 +1398,10 @@
             false,
             false,
             false,
-            false,
             true,
-            false,
-            false,
+            true,
+            true,
+            true,
             false,
             false,
             false,
@@ -1335,8 +1430,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -1369,37 +1462,85 @@
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 30,
-                "OldDestination": 30,
+                "LogicalDestination": 29,
+                "OldDestination": 29,
                 "PC": 0
             },
             {
                 "Done": true,
                 "Exception": false,
-                "LogicalDestination": 9,
-                "OldDestination": 9,
+                "LogicalDestination": 27,
+                "OldDestination": 27,
                 "PC": 1
-            },
-            {
-                "Done": true,
-                "Exception": false,
-                "LogicalDestination": 22,
-                "OldDestination": 22,
-                "PC": 2
             },
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 8,
-                "OldDestination": 8,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
+                "PC": 2
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 30,
+                "OldDestination": 30,
                 "PC": 3
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 7,
+                "OldDestination": 7,
+                "PC": 4
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
+                "PC": 5
             }
         ],
-        "IntegerQueue": []
+        "IntegerQueue": [
+            {
+                "DestRegister": 35,
+                "OpAIsReady": false,
+                "OpARegTag": 34,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 18446744073709551612,
+                "OpCode": "add",
+                "PC": 3
+            },
+            {
+                "DestRegister": 36,
+                "OpAIsReady": false,
+                "OpARegTag": 35,
+                "OpAValue": 0,
+                "OpBIsReady": true,
+                "OpBRegTag": 0,
+                "OpBValue": 6,
+                "OpCode": "add",
+                "PC": 4
+            },
+            {
+                "DestRegister": 37,
+                "OpAIsReady": false,
+                "OpARegTag": 36,
+                "OpAValue": 0,
+                "OpBIsReady": false,
+                "OpBRegTag": 34,
+                "OpBValue": 0,
+                "OpCode": "add",
+                "PC": 5
+            }
+        ]
     },
     {
         "PC": 65536,
-        "ExceptionPC": 3,
+        "ExceptionPC": 2,
         "Exception": true,
         "PhysicalRegisterFile": [
             0,
@@ -1434,8 +1575,8 @@
             0,
             0,
             0,
-            18446744072936878653,
             0,
+            18446744073709525230,
             0,
             0,
             0,
@@ -1469,19 +1610,19 @@
         ],
         "RegisterMapTable": [
             0,
-            1,
+            34,
             2,
             3,
             4,
             5,
             6,
-            7,
-            35,
-            33,
+            36,
+            8,
+            9,
             10,
             11,
             12,
-            13,
+            37,
             14,
             15,
             16,
@@ -1490,15 +1631,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            35,
             31
         ],
         "BusyBitTable": [
@@ -1536,10 +1677,10 @@
             false,
             false,
             false,
-            false,
             true,
-            false,
-            false,
+            true,
+            true,
+            true,
             false,
             false,
             false,
@@ -1568,8 +1709,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -1596,25 +1735,45 @@
             61,
             62,
             63,
-            30,
-            9,
-            22
+            29,
+            27
         ],
         "DecodedPCs": [],
         "ActiveList": [
             {
                 "Done": true,
                 "Exception": true,
-                "LogicalDestination": 8,
-                "OldDestination": 8,
+                "LogicalDestination": 1,
+                "OldDestination": 1,
+                "PC": 2
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 30,
+                "OldDestination": 30,
                 "PC": 3
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 7,
+                "OldDestination": 7,
+                "PC": 4
+            },
+            {
+                "Done": false,
+                "Exception": false,
+                "LogicalDestination": 13,
+                "OldDestination": 13,
+                "PC": 5
             }
         ],
         "IntegerQueue": []
     },
     {
         "PC": 65536,
-        "ExceptionPC": 3,
+        "ExceptionPC": 2,
         "Exception": true,
         "PhysicalRegisterFile": [
             0,
@@ -1649,8 +1808,8 @@
             0,
             0,
             0,
-            18446744072936878653,
             0,
+            18446744073709525230,
             0,
             0,
             0,
@@ -1692,7 +1851,7 @@
             6,
             7,
             8,
-            33,
+            9,
             10,
             11,
             12,
@@ -1705,15 +1864,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            30,
             31
         ],
         "BusyBitTable": [
@@ -1783,8 +1942,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -1811,10 +1968,12 @@
             61,
             62,
             63,
-            30,
-            9,
-            22,
-            35
+            29,
+            27,
+            37,
+            36,
+            35,
+            34
         ],
         "DecodedPCs": [],
         "ActiveList": [],
@@ -1822,7 +1981,7 @@
     },
     {
         "PC": 65536,
-        "ExceptionPC": 3,
+        "ExceptionPC": 2,
         "Exception": false,
         "PhysicalRegisterFile": [
             0,
@@ -1857,8 +2016,8 @@
             0,
             0,
             0,
-            18446744072936878653,
             0,
+            18446744073709525230,
             0,
             0,
             0,
@@ -1900,7 +2059,7 @@
             6,
             7,
             8,
-            33,
+            9,
             10,
             11,
             12,
@@ -1913,15 +2072,15 @@
             19,
             20,
             21,
-            34,
+            22,
             23,
             24,
             25,
             26,
-            27,
+            33,
             28,
-            29,
             32,
+            30,
             31
         ],
         "BusyBitTable": [
@@ -1991,8 +2150,6 @@
             false
         ],
         "FreeList": [
-            36,
-            37,
             38,
             39,
             40,
@@ -2019,10 +2176,12 @@
             61,
             62,
             63,
-            30,
-            9,
-            22,
-            35
+            29,
+            27,
+            37,
+            36,
+            35,
+            34
         ],
         "DecodedPCs": [],
         "ActiveList": [],

@@ -1,11 +1,5 @@
 [
-  "remu x0, x16, x6",
-  "sub x0, x2, x10",
-  "sub x0, x28, x10",
-  "sub x0, x16, x22",
-  "add x0, x17, x30",
-  "divu x0, x13, x29",
-  "sub x0, x25, x0",
-  "sub x0, x1, x27",
-  "addi x0, x21, -3031320035559672136"
+  "sub x30, x14, x28",
+  "addi x22, x24, -32074",
+  "divu x3, x15, x0"
 ]

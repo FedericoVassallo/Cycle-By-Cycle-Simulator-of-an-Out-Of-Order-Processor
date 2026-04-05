@@ -1,10 +1,7 @@
 [
-  "mulu x13, x30, x23",
-  "mulu x17, x26, x27",
-  "addi x15, x15, -13",
-  "add x31, x0, x21",
-  "remu x20, x4, x0",
-  "addi x16, x20, 11",
-  "addi x12, x20, 12",
-  "addi x14, x20, 7"
+  "mulu x29, x30, x11",
+  "addi x25, x4, 3",
+  "mulu x1, x17, x28",
+  "addi x30, x9, -77",
+  "divu x19, x14, x0"
 ]

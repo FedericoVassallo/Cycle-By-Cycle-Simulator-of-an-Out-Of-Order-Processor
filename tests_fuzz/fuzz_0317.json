@@ -1,5 +1,4 @@
 [
-  "remu x25, x17, x17",
-  "add x9, x29, x17",
-  "sub x7, x16, x16"
+  "sub x0, x4, x24",
+  "addi x0, x19, -2"
 ]

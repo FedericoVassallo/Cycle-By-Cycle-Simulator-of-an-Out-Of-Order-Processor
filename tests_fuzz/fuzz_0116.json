@@ -1,5 +1,4 @@
 [
-  "addi x9, x0, 3",
-  "addi x28, x9, 6",
-  "addi x13, x28, -4"
+  "add x7, x13, x5",
+  "addi x5, x17, -30329"
 ]

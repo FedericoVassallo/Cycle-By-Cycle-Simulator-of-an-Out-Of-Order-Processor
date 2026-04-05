@@ -1,5 +1,13 @@
 [
-  "remu x11, x26, x1",
-  "addi x11, x20, -8006",
-  "mulu x11, x1, x14"
+  "addi x25, x0, 16",
+  "addi x12, x25, -3",
+  "addi x31, x12, -3",
+  "sub x1, x31, x14",
+  "sub x19, x1, x31",
+  "add x26, x19, x5",
+  "sub x28, x26, x14",
+  "addi x27, x28, 10",
+  "addi x30, x27, -3",
+  "addi x1, x30, -4",
+  "addi x12, x1, -2"
 ]

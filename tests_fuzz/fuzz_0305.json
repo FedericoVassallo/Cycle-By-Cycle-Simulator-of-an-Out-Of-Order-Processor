@@ -1,3 +1,11 @@
 [
-  "addi x1, x0, 2"
+  "addi x27, x0, 10",
+  "add x23, x27, x15",
+  "addi x5, x23, -1",
+  "addi x27, x5, 8",
+  "addi x18, x27, 7",
+  "add x17, x18, x30",
+  "addi x24, x17, -1",
+  "add x15, x24, x9",
+  "addi x5, x15, 6"
 ]
