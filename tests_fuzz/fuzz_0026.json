@@ -1,7 +1,0 @@
-[
-  "sub x8, x29, x8",
-  "add x24, x7, x31",
-  "addi x30, x1, -65",
-  "mulu x21, x15, x11",
-  "remu x14, x4, x0"
-]

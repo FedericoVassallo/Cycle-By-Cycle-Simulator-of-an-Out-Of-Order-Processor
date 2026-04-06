@@ -1,7 +1,0 @@
-[
-  "add x27, x19, x12",
-  "mulu x14, x12, x18",
-  "sub x10, x20, x2",
-  "mulu x7, x12, x26",
-  "divu x10, x3, x0"
-]

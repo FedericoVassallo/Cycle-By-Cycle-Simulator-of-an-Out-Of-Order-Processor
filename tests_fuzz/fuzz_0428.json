@@ -1,6 +1,0 @@
-[
-  "sub x3, x20, x26",
-  "add x7, x31, x23",
-  "divu x30, x21, x0",
-  "divu x0, x7, x0"
-]

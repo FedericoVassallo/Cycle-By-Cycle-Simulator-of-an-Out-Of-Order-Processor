@@ -1,7 +1,0 @@
-[
-  "divu x15, x11, x25",
-  "add x15, x5, x20",
-  "add x15, x0, x31",
-  "remu x15, x17, x7",
-  "addi x15, x14, 1"
-]

@@ -1,9 +1,0 @@
-[
-  "addi x24, x0, 36",
-  "add x26, x24, x15",
-  "addi x15, x26, 5",
-  "addi x28, x15, 1",
-  "add x26, x28, x9",
-  "addi x31, x26, -1",
-  "sub x8, x31, x15"
-]
