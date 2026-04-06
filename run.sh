@@ -1,2 +1,2 @@
 #!/bin/bash
-./simulator $1 $2
+./simulator "$1" "$2"

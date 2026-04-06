@@ -1,1 +1,0 @@
-8 instructions ready at once — must pick 4 oldest (smallest PC)

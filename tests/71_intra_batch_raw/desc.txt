@@ -1,1 +1,0 @@
-RAW within same fetch group — inst 1 writes x1, inst 2 reads x1

@@ -1,1 +1,0 @@
-BBT for rolled-back physical registers must be cleared during rollback

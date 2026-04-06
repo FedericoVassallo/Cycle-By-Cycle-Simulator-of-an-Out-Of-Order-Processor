@@ -1,1 +1,0 @@
-Dispatch needs exactly the regs that commit frees this cycle — same-cycle path

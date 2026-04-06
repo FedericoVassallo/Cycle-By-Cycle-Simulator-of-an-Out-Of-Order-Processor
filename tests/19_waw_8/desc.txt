@@ -1,1 +1,0 @@
-8 instrs writing x1

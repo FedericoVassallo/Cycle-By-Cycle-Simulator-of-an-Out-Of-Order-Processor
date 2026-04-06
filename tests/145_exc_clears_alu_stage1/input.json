@@ -1,7 +1,0 @@
-[
-    "addi x1, x0, 1",
-    "addi x2, x0, 0",
-    "divu x3, x1, x2",
-    "addi x4, x0, 99",
-    "addi x5, x0, 88"
-]

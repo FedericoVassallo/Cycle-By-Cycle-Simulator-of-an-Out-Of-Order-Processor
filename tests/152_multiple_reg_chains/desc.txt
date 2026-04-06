@@ -1,1 +1,0 @@
-Three registers each going through their own chain, then merge

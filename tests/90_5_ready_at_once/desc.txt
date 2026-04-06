@@ -1,1 +1,0 @@
-5 instructions ready simultaneously — only 4 can issue, 5th waits

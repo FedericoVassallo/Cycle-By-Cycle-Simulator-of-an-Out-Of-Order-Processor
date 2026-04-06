@@ -1,1 +1,0 @@
-Multiple x0 writes — RMT[0] changes each time, rollback must undo correctly

@@ -277,4 +277,3 @@ for i in range(len(INPUT)):
         exit(1)
 
 print(f"{GREEN}PASSED!{RESET}")
-

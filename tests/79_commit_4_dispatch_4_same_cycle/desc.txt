@@ -1,1 +1,0 @@
-4 commit + 4 dispatch in same cycle — tests combinational path through free list

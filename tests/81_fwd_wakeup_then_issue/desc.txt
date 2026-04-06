@@ -1,1 +1,0 @@
-IQ entry woken by forwarding, issued next cycle — verify forwarded value used

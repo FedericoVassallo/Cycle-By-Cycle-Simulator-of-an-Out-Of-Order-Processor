@@ -1,1 +1,0 @@
-For addi, OpB is the immediate value, OpBRegTag=0, OpBIsReady=true

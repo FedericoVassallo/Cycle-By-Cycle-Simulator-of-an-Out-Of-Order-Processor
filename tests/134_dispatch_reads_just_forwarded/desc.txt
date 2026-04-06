@@ -1,1 +1,0 @@
-Dispatch in same cycle as forwarding — new IQ entry should read forwarded value

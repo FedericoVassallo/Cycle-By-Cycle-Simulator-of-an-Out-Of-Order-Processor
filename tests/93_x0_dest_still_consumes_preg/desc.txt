@@ -1,1 +1,0 @@
-Writing to x0 still consumes a physical register and creates AL/IQ entries

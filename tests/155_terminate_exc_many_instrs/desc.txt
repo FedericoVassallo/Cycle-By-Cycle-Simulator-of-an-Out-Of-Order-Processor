@@ -1,1 +1,0 @@
-Exception in large program — must terminate after full rollback, not early

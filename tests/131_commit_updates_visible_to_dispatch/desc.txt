@@ -1,1 +1,0 @@
-Committed instruction frees old preg — dispatch in same cycle should NOT read stale data

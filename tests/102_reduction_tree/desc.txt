@@ -1,1 +1,0 @@
-Binary reduction tree — parallel then merge

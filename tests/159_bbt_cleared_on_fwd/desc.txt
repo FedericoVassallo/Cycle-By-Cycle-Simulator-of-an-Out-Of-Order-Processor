@@ -1,1 +1,0 @@
-BBT[preg] cleared when forwarding result arrives, not when committed

@@ -1,1 +1,0 @@
-8 ready, 4 ALUs, oldest win

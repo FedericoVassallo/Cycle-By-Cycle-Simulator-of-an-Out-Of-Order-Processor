@@ -1,6 +1,0 @@
-[
-    "addi x1, x0, 1000",
-    "addi x2, x0, 2000",
-    "mulu x3, x1, x2",
-    "addi x4, x3, 1"
-]

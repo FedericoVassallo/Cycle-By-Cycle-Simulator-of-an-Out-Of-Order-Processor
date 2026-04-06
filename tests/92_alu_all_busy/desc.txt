@@ -1,1 +1,0 @@
-All 4 ALUs occupied — ready instructions must wait for ALU

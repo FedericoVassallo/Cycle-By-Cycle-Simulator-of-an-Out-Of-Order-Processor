@@ -1,1 +1,0 @@
-Multiple independent mulu — tests parallel ALU usage

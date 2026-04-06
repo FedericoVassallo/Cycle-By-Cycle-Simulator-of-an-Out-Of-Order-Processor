@@ -1,1 +1,0 @@
-remu x % 1 = 0 for any x

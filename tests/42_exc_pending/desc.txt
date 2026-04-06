@@ -1,1 +1,0 @@
-Exc with many trailing instrs

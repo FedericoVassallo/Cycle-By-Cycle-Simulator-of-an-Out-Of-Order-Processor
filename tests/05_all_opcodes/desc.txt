@@ -1,1 +1,0 @@
-All opcodes, no exception

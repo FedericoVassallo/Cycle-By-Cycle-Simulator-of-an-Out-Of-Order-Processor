@@ -1,1 +1,0 @@
-BBT[new_preg] set to true during dispatch, even if instruction is ready to issue

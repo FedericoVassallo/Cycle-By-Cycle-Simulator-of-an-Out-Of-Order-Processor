@@ -1,1 +1,0 @@
-DIR has 2 instructions, FL has only 1 — both stall even though 1 could fit

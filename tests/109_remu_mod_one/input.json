@@ -1,5 +1,0 @@
-[
-    "addi x1, x0, 42",
-    "addi x2, x0, 1",
-    "remu x3, x1, x2"
-]

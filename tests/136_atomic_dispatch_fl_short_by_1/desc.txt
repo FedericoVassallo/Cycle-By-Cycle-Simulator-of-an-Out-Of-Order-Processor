@@ -1,1 +1,0 @@
-DIR has 4 but FL has only 3 — all 4 must stall, not just the 4th

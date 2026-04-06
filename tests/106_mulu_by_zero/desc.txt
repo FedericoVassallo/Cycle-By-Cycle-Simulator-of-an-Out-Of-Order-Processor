@@ -1,1 +1,0 @@
-mulu by zero — result is 0, no exception
